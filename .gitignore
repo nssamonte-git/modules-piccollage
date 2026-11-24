@@ -13,3 +13,8 @@ captures/
 
 # The validator's test fixtures include a build/ folder on purpose (it proves build output is skipped).
 !features/mobile-build-validator/validator/tests/fixtures/**/build/
+
+# Local AI handoff notes: kept on this machine, never committed or pushed.
+/AGENTS.md
+/HANDOFF.md
+/DECISIONS.md

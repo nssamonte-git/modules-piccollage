@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Android Libraries Guide</title>
+<link rel="stylesheet" href="guide.css">
+</head>
+<body>
+
+<!-- ============================================================ 1 COVER -->
+<div class="page">
+  <div class="cover-body">
+    <div class="cover-eyebrow">User Guide</div>
+    <div class="cover-title">Android Libraries<br>Reusable Creative Modules</div>
+    <div class="cover-sub">Photo, collage and video editing features for Android apps, plus a security build gate</div>
+    <div class="cover-rule"><div class="a"></div><div class="b"></div></div>
+
+    <div class="hero-band">
+      <p>A Gradle library of Android modules that cover the editing features of a mature
+      creative app: undo and redo, drafts, canvas gestures, templates, layout, effects,
+      masks, text, still and video export, and AI-assisted edits. Add only the modules an app
+      needs, and gate every build with the mobile build validator.</p>
+      <div class="metrics on-blue">
+        <div class="metric"><div class="num">25</div><div class="lab">Creative modules</div></div>
+        <div class="metric"><div class="num">11</div><div class="lab">Feature pairs</div></div>
+        <div class="metric"><div class="num">0.2.1</div><div class="lab">Current version</div></div>
+      </div>
+    </div>
+
+    <div class="mt-l">
+      <table class="formal">
+        <tbody>
+          <tr><td class="k" style="width:1.7in;">Prepared for</td><td>Android developers reusing these modules</td></tr>
+          <tr><td class="k">Prepared by</td><td>Noel Samonte</td></tr>
+          <tr><td class="k">Prepared date</td><td>November 2026</td></tr>
+          <tr><td class="k">Document type</td><td>User Guide</td></tr>
+          <tr><td class="k">Repository</td><td><code class="inline">https://github.com/nssamonte-git/modules-piccollage</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ 2 OVERVIEW -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Overview</div>
+    <h1 class="ptitle">What This Repository Is</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">One Gradle project that publishes reusable Android modules under the group
+    <code class="inline">noel.libs</code>, all at one version.</p>
+
+    <p class="body">Each creative feature is split in two. The <b>engine</b> module holds the logic,
+    has no Jetpack Compose dependency, and keeps its domain code free of Android imports. The
+    optional <b>compose</b> module adds ready-made UI for that engine. An app can use an engine
+    with its own UI, or add both.</p>
+
+    <div class="grid2">
+      <div class="tile"><h4>Engine modules</h4><p>Editing logic, storage, rendering and export. No Compose.
+      Example: <code class="inline">core-creative-history-engine</code>.</p></div>
+      <div class="tile teal-top"><h4>Compose modules</h4><p>Optional, themeable UI that takes state and callbacks from the app.
+      Example: <code class="inline">core-creative-history-compose</code>.</p></div>
+    </div>
+
+    <table class="formal compact mt-l">
+      <thead><tr><th style="width:2.1in;">Folder</th><th>What it holds</th></tr></thead>
+      <tbody>
+        <tr><td class="k">core/creative-*</td><td>The 25 creative modules: 11 engine and Compose pairs, plus model, renderer and shared Compose helpers.</td></tr>
+        <tr><td class="k">core/logging</td><td>A small logging facade with a Logcat sink.</td></tr>
+        <tr><td class="k">build-validator-plugin/</td><td>The mobile build validator as a Gradle plugin.</td></tr>
+        <tr><td class="k">features/mobile-build-validator/</td><td>The validator's scanner, rules and threat cards; a copy-in kit for non-Gradle apps.</td></tr>
+        <tr><td class="k">build-logic/</td><td>Shared build settings applied to every module.</td></tr>
+        <tr><td class="k">sample/</td><td>A Compose app that wires every module together.</td></tr>
+        <tr><td class="k">docs/</td><td>The integration guide, validation record and this PDF.</td></tr>
+      </tbody>
+    </table>
+
+    <table class="formal compact mt-l">
+      <thead><tr><th style="width:2.1in;">Toolchain</th><th>Version</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Android Gradle Plugin</td><td>9.5.1 (built-in Kotlin)</td></tr>
+        <tr><td class="k">Kotlin / Gradle</td><td>2.3.21 / 9.6.0, JDK 25 for the build</td></tr>
+        <tr><td class="k">Android SDK</td><td>minSdk 26, compileSdk 37, Java 11 bytecode</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 2 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 3 ORIGIN -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Origin</div>
+    <h1 class="ptitle">Where the Core Modules Come From</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">The feature set of the creative modules was identified from a static review of
+    the PicCollage app, version 7.33.11. The code is an original implementation of those features.</p>
+
+    <table class="formal">
+      <tbody>
+        <tr><td class="k" style="width:1.6in;">Reference app</td><td>PicCollage: Photo &amp; Video Editor, version 7.33.11</td></tr>
+        <tr><td class="k">Package reviewed</td><td><code class="inline">PicCollage-+Photo+Video+Editor_7.33.11_APKPure.xapk</code></td></tr>
+        <tr><td class="k">SHA-256</td><td><code class="inline" style="font-size:7.4pt;">a81bdb451fe066d48f899f8e64deec147cca28b7c183ed42439dea4a20d8a8aa</code></td></tr>
+        <tr><td class="k">Review type</td><td>Offline static review, used to list the app's capabilities (36 topics)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid2 mt-l">
+      <div class="tile"><h4>What was taken</h4><p>The list of features a mature collage and video editor offers,
+      and high-level findings about how those features behave for the user.</p></div>
+      <div class="tile teal-top"><h4>What was written new</h4><p>All code, tests, sample media and documentation in this repo.
+      The sample uses original generated images and local, deterministic AI providers.</p></div>
+    </div>
+
+    <div class="callout warn mt-l">
+      <div class="ctitle">Not included, not claimed</div>
+      <p>No PicCollage source code, media, fonts, AI prompts, app endpoints or credentials are in this
+      repository. The library does not claim compatibility with PicCollage documents, identical
+      algorithms, or the same AI provider behaviour. PicCollage is a trademark of its owner; this
+      library is not affiliated with or endorsed by it.</p>
+    </div>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 3 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 4 FLOW -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Process</div>
+    <h1 class="ptitle">From the APK to Your App</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+
+    <div class="chart">
+      <div class="phase-label">How the library was built</div>
+      <div class="node"><div class="n">1</div><div><h5>PicCollage 7.33.11 APK, decompiled</h5>
+        <p>The app package was decompiled for an offline static review of what the app does.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node"><div class="n">2</div><div><h5>Gather the reusable features</h5>
+        <p>36 feature topics were listed: undo, drafts, canvas, templates, layout, effects, masks, text, export, AI.</p></div></div>
+      <div class="boundary">Only the feature list moves past this line: no PicCollage code, media or assets</div>
+      <div class="node"><div class="n">3</div><div><h5>Design them as modules</h5>
+        <p>11 features, each an engine (no Compose) plus optional Compose UI, on a shared model and renderer.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node"><div class="n">4</div><div><h5>Write original code and tests</h5>
+        <p>New Kotlin implementation in 25 modules, with 53 unit tests and 8 device tests.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node"><div class="n">5</div><div><h5>Check every build</h5>
+        <p>Module graph check, mobile build validator, unit tests and an R8 release build of the sample.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node"><div class="n">6</div><div><h5>Publish version 0.2.1</h5>
+        <p>Available from source (<code class="inline">includeBuild</code>) or Maven Local; code on GitHub.</p></div></div>
+
+      <div class="arrow"></div>
+      <div class="phase-label" style="margin-top:0.08in;">How you use it</div>
+      <div class="node use"><div class="n">7</div><div><h5>Add it to your app</h5>
+        <p>Clone the repo, connect it with <code class="inline">includeBuild</code> or <code class="inline">mavenLocal()</code>, add the dependency lines and the validator plugin.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node use"><div class="n">8</div><div><h5>Wire your own services</h5>
+        <p>AI providers, storage folder, FileProvider and worker threads, behind the library's interfaces.</p></div></div>
+      <div class="arrow"></div>
+      <div class="node use"><div class="n">9</div><div><h5>Build and ship</h5>
+        <p>The validator checks every build; test live providers and device video codecs before release.</p></div></div>
+    </div>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 4 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 4 WHY REUSE -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Value</div>
+    <h1 class="ptitle">Why Reuse These Modules</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">When a project needs features that PicCollage already offers, these modules
+    give a tested starting point instead of a rebuild from scratch.</p>
+
+    <div class="grid2">
+      <div class="tile"><span class="tag">Proven scope</span><h4>Features users already expect</h4><p>The feature list
+      comes from a shipping consumer app, so it reflects what a collage or photo and video editor needs in practice.</p></div>
+      <div class="tile teal-top"><span class="tag">Hard parts done</span><h4>Expensive work already built</h4><p>Transactional undo and
+      redo, crash-safe drafts, gesture previews, GPU effects with CPU fallback, and verified MP4 export.</p></div>
+      <div class="tile teal-top"><span class="tag">Pick and choose</span><h4>Only what the app needs</h4><p>Each feature is its own
+      module. Engines add no Compose, and Compose UI is optional.</p></div>
+      <div class="tile"><span class="tag">Your services</span><h4>Your backend stays yours</h4><p>AI providers, cloud backup,
+      billing and accounts plug in through interfaces the app implements. No vendor is built in.</p></div>
+    </div>
+
+    <p class="body mt-l"><b>Typical uses:</b> a collage or poster maker, a photo editor with
+    erase and restore masks, a slideshow or short-video maker with music and crossfades, an
+    editor with AI image suggestions that stay reversible, or any app that needs reliable
+    undo, drafts and export.</p>
+
+    <div class="metrics mt-l">
+      <div class="metric"><div class="num">53</div><div class="lab">Unit tests</div></div>
+      <div class="metric"><div class="num">8</div><div class="lab">Device tests</div></div>
+      <div class="metric"><div class="num">3</div><div class="lab">Android versions tested</div></div>
+    </div>
+    <p class="body mt-s" style="font-size:8.6pt;">Device tests ran on API 26 and API 37 emulators and a physical API 29 phone.
+    A module graph check also blocks circular dependencies and keeps engines free of Compose.</p>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 5 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 5 CATALOG -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Catalog</div>
+    <h1 class="ptitle">Module Catalog</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">Every module is published as <code class="inline">noel.libs:&lt;name&gt;:0.2.1</code>.
+    Add the engine, and the Compose module only if you want its UI.</p>
+
+    <table class="formal compact">
+      <thead><tr><th style="width:2.2in;">Feature</th><th>Engine</th><th>Optional UI</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Undo / redo</td><td>core-creative-history-engine</td><td>core-creative-history-compose</td></tr>
+        <tr><td class="k">Drafts and storage</td><td>core-creative-documents-engine</td><td>core-creative-documents-compose</td></tr>
+        <tr><td class="k">Canvas and gestures</td><td>core-creative-canvas-engine</td><td>core-creative-canvas-compose</td></tr>
+        <tr><td class="k">Templates</td><td>core-creative-templates-engine</td><td>core-creative-templates-compose</td></tr>
+        <tr><td class="k">Layout and crops</td><td>core-creative-layout-engine</td><td>core-creative-layout-compose</td></tr>
+        <tr><td class="k">Effects (GPU + CPU)</td><td>core-creative-effects-engine</td><td>core-creative-effects-compose</td></tr>
+        <tr><td class="k">Erase / restore masks</td><td>core-creative-masks-engine</td><td>core-creative-masks-compose</td></tr>
+        <tr><td class="k">Text and styles</td><td>core-creative-text-engine</td><td>core-creative-text-compose</td></tr>
+        <tr><td class="k">PNG, JPEG, MP4 export</td><td>core-creative-export-engine</td><td>core-creative-export-compose</td></tr>
+        <tr><td class="k">AI editing tools</td><td>core-creative-ai-tools-engine</td><td>core-creative-ai-tools-compose</td></tr>
+        <tr><td class="k">AI image jobs</td><td>core-creative-ai-images-engine</td><td>core-creative-ai-images-compose</td></tr>
+      </tbody>
+    </table>
+
+    <table class="formal compact mt-l">
+      <thead><tr><th style="width:2.2in;">Shared module</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td class="k">core-creative-model</td><td>Document, page, layer and edit types used by every creative module.</td></tr>
+        <tr><td class="k">core-creative-renderer</td><td>Draws pages to bitmaps for the canvas and for export.</td></tr>
+        <tr><td class="k">core-creative-compose-common</td><td>Small Compose helpers shared by the UI modules.</td></tr>
+        <tr><td class="k">core-logging</td><td>Logging facade with lazy messages and a Logcat sink.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout tip mt-l">
+      <div class="ctitle">Details per module</div>
+      <p>Each module folder has a README with its purpose, a quick start, main types, what the app
+      must provide, and its limits. Start at the catalog in the repository's <code class="inline">README.md</code>.</p>
+    </div>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 6 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 6 VALIDATOR WHY -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Security</div>
+    <h1 class="ptitle">Mobile Build Validator: Why It Matters</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">A security gate that runs before the app compiles. If the source has a critical or
+    high security problem, the build stops until it is fixed.</p>
+
+    <p class="body">Security mistakes in mobile apps are cheap to fix while the code is being written
+    and expensive after release, when the app is already on users' phones and can be pulled apart.
+    The validator moves that check to every build, on every developer machine and in CI, so a risky
+    change never reaches a release by accident.</p>
+
+    <div class="grid2">
+      <div class="tile"><h4>What it stops</h4><p>Trust-all TLS and host checks, exported components without
+      protection, debuggable or unobfuscated release builds, committed secrets and keystores, unsafe
+      WebView bridges, and weak or misused cryptography.</p></div>
+      <div class="tile teal-top"><h4>How it reports</h4><p>Each finding gives the file and line, the rule,
+      the threat it relates to, and how to fix it. A JSON report is written for CI.</p></div>
+      <div class="tile teal-top"><h4>No silent bypass</h4><p>There is no skip switch. A finding goes away only when the
+      code is fixed or an exception with a written reason is committed, and exceptions stay visible
+      in every report.</p></div>
+      <div class="tile"><h4>Self-contained</h4><p>The rules and threat cards ship inside the plugin, so it works on
+      any machine and in CI without other repositories.</p></div>
+    </div>
+
+    <div class="metrics mt-l">
+      <div class="metric"><div class="num">92</div><div class="lab">Android + shared rules</div></div>
+      <div class="metric"><div class="num">49</div><div class="lab">Block the build</div></div>
+      <div class="metric"><div class="num">160</div><div class="lab">Rules, all platforms</div></div>
+    </div>
+    <p class="body mt-s" style="font-size:8.6pt;">Of the 92 rules applied to Android apps, 5 are critical and 44 are high (these block);
+    34 medium and 9 low rules print warnings. This library runs the validator on its own code on every build.</p>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 7 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 7 VALIDATOR HOW -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Security</div>
+    <h1 class="ptitle">Add the Build Validator to an App</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">For native Android apps it is one plugin line in the root build file.</p>
+
+<div class="code"><span class="cm">// root build.gradle.kts of the app</span>
+plugins {
+    id(<span class="st">"noel.libs.build-validator"</span>)               <span class="cm">// from source (includeBuild)</span>
+    <span class="cm">// id("noel.libs.build-validator") version "0.2.1"   // from Maven Local</span>
+}</div>
+
+    <ol class="steps mt-l">
+      <li><b>Build as usual.</b> Every module's <code class="inline">preBuild</code> and Kotlin compile now run
+      <code class="inline">validateThreats</code> first. Run it alone with <code class="inline">./gradlew validateThreats</code>.</li>
+      <li><b>Read the findings.</b> They print above the build result. The JSON report is at
+      <code class="inline">build/reports/build-validator/report.json</code>.</li>
+      <li><b>Fix, or record a reasoned exception.</b> Inline, on or above the line:
+      <code class="inline">// build-validator:ignore AND-WV-001 reason: &lt;why&gt;, &lt;ticket&gt;</code>.
+      Or a line <code class="inline">RULE_ID&lt;TAB&gt;path-glob&lt;TAB&gt;reason</code> in
+      <code class="inline">.build-validator-ignore</code> at the project root.</li>
+      <li><b>Add it to CI.</b> Run <code class="inline">./gradlew validateThreats</code> as an early CI step.</li>
+    </ol>
+
+    <div class="callout mt-l">
+      <div class="ctitle">Flutter, React Native and iOS apps</div>
+      <p>Use the copy-in kit, which installs the scanner into the app and wires Gradle and Xcode:</p>
+    </div>
+<div class="code mt-s">sh <span class="st">"features/mobile-build-validator/validator/Flutter/install.sh"</span> /path/to/app --with-cards
+<span class="cm"># also: "React Native/install.sh", "Native IOS/install.sh", "Native Android/install.sh"</span></div>
+
+    <div class="callout warn mt-l">
+      <div class="ctitle">Never</div>
+      <p>Remove the plugin, lower its threshold, or suppress a finding without a real reason to get
+      a green build.</p>
+    </div>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 8 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 8 ADD TO PROJECT -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Setup</div>
+    <h1 class="ptitle">Add the Library to a Project</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">Gradle pulls the modules in directly. No AAR files to copy.</p>
+
+    <div class="flow">
+      <div class="fstep"><div class="dot">1</div><h5>Get the repo</h5><p>Clone it next to your app.</p></div>
+      <div class="fstep alt"><div class="dot">2</div><h5>Connect it</h5><p>includeBuild, or publish to Maven Local.</p></div>
+      <div class="fstep"><div class="dot">3</div><h5>Add modules</h5><p>One dependency line per feature.</p></div>
+      <div class="fstep alt"><div class="dot">4</div><h5>Build</h5><p>The validator checks every build.</p></div>
+    </div>
+
+    <p class="body mt-l"><b>Option A: from source (best while the library is changing).</b>
+    In the app's <code class="inline">settings.gradle.kts</code>:</p>
+<div class="code">git clone https://github.com/nssamonte-git/modules-piccollage
+
+<span class="cm">// settings.gradle.kts of the app</span>
+pluginManagement {
+    includeBuild(<span class="st">"../modules-piccollage/build-validator-plugin"</span>)
+    repositories { google(); mavenCentral(); gradlePluginPortal() }
+}
+includeBuild(<span class="st">"../modules-piccollage"</span>)</div>
+
+    <p class="body mt-l"><b>Option B: from Maven Local (fixed versions).</b> In the library run
+    <code class="inline">./gradlew publishToMavenLocal</code>. In the app, add <code class="inline">mavenLocal()</code>
+    first in both repository lists, and give the plugin a version.</p>
+
+    <p class="body"><b>Then add the modules you need</b> to an app module:</p>
+<div class="code">dependencies {
+    implementation(<span class="st">"noel.libs:core-creative-history-engine:0.2.1"</span>)
+    implementation(<span class="st">"noel.libs:core-creative-canvas-compose:0.2.1"</span>)
+    implementation(<span class="st">"noel.libs:core-creative-renderer:0.2.1"</span>)
+}</div>
+
+    <p class="body mt-s" style="font-size:8.6pt;">Requirements: minSdk 26 or higher, and JDK 25 to build the library. Publishing to a shared
+    repository such as GitHub Packages is not set up yet.</p>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 9 OF 10</span></div>
+</div>
+
+<!-- ============================================================ 9 USE + CLOSING -->
+<div class="page">
+  <div class="content">
+    <div class="eyebrow">Usage</div>
+    <h1 class="ptitle">Use a Module</h1>
+    <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
+    <p class="lede">Example: move a layer as one undoable edit, from the history engine's README.</p>
+
+<div class="code">import noel.libs.creative.history.domain.HistorySession
+import noel.libs.creative.model.*
+
+fun moveTitle(document: CreativeDocument) {
+    val session = HistorySession(document)
+    val current = session.document.value
+    val edit = Edit.TransformLayer(<span class="st">"page-1"</span>, <span class="st">"title"</span>, Transform(x = 40.0, y = 15.0))
+    when (val result = session.commit(EditRequest(current.revision, listOf(edit)))) {
+        is Outcome.Success -&gt; println(<span class="st">"now at revision ${result.value.revision}"</span>)
+        is Outcome.Failure -&gt; println(result.error.code)
+    }
+    if (session.history.value.canUndo) session.undo()
+}</div>
+
+    <p class="body mt-l"><b>What your app provides</b></p>
+    <div class="check-row"><div class="box">✓</div><p>One edit session per open document, created where the app wires its dependencies.</p></div>
+    <div class="check-row"><div class="box">✓</div><p>Rendering, file journals and export on a worker thread, not the main thread.</p></div>
+    <div class="check-row"><div class="box">✓</div><p>An app-private folder for drafts, and a FileProvider entry for sharing exports.</p></div>
+    <div class="check-row"><div class="box">✓</div><p>Your own AI provider, cloud, billing and account adapters behind the library's interfaces; keys stay on your backend.</p></div>
+
+    <div class="callout tip mt-l">
+      <div class="ctitle">Next steps</div>
+      <p>Read the README of each module you add, then <code class="inline">docs/creative-libraries.md</code>
+      for ownership and defaults. The <code class="inline">sample/</code> app shows every module wired together.
+      Check live AI providers and device-specific video codecs in your own app before release.</p>
+    </div>
+  </div>
+  <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 10 OF 10</span></div>
+</div>
+
+</body>
+</html>

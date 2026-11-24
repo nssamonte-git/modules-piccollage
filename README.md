@@ -22,7 +22,7 @@ Group `noel.libs`, version **0.2.1** (`library.version` in `gradle.properties`).
 
 All suffixes use `noel.libs:<suffix>:0.2.1`. Shared artifacts are [`core-creative-model`](core/creative-model/README.md), [`core-creative-renderer`](core/creative-renderer/README.md), and [`core-creative-compose-common`](core/creative-compose-common/README.md). Existing [`core-logging`](core/logging/README.md) and the `noel.libs.build-validator` plugin remain available at the same library version.
 
-Each module folder has a README with what it is for, a quick start, the main types, what your app provides, and its limits. See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits.
+Each module folder has a README with what it is for, a quick start, the main types, what your app provides, and its limits. See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits. For a short overview to share, see the [PDF guide](docs/guide/android-libraries-guide.pdf) (source: `docs/guide/android-libraries-guide.html`).
 
 ## Use it in an app
 

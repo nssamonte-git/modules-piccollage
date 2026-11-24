@@ -1,0 +1,130 @@
+/* Plain print theme for the Android Libraries guide. US Letter, one .page per printed page. */
+:root {
+  --ink: #111827;
+  --body: #374151;
+  --muted: #6b7280;
+  --line: #d1d5db;
+  --panel: #f3f4f6;
+  --accent: #111827;
+  --warn-bg: #fdf8ec;
+  --warn-line: #b7791f;
+  --font: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, monospace;
+  --pad: 0.75in;
+}
+@page { size: letter; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; color: var(--body); font-family: var(--font);
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.page { width: 8.5in; height: 11in; position: relative; overflow: hidden; page-break-after: always; }
+.content { position: absolute; top: 0.8in; left: var(--pad); right: var(--pad); bottom: 0.7in; }
+
+/* Cover */
+.cover-body { position: absolute; top: 1.6in; left: var(--pad); right: var(--pad); }
+.cover-eyebrow, .eyebrow { font-size: 8pt; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 0.12in; }
+.cover-title { font-size: 32pt; font-weight: 700; line-height: 1.15; color: var(--ink); }
+.cover-sub { font-size: 13pt; color: var(--body); margin-top: 0.16in; line-height: 1.4; }
+.cover-rule, .title-rule { height: 2px; background: var(--ink); width: 1.1in; margin: 0.28in 0; }
+.title-rule { margin: 0.12in 0 0.22in; width: 0.8in; }
+.cover-rule div, .title-rule div { display: none; }
+
+.hero-band { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 0.24in; }
+.hero-band p { font-size: 11pt; line-height: 1.55; color: var(--ink); margin-bottom: 0.2in; }
+
+/* Text */
+.ptitle { font-size: 22pt; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.lede { font-size: 12pt; line-height: 1.5; color: var(--ink); margin-bottom: 0.22in; }
+p.body { font-size: 10pt; line-height: 1.55; margin-bottom: 0.12in; }
+b { color: var(--ink); }
+code.inline { font-family: var(--mono); font-size: 8.6pt; background: var(--panel);
+  border: 1px solid var(--line); border-radius: 3px; padding: 0 3px; color: var(--ink); }
+
+/* Cards */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.16in; }
+.tile { border: 1px solid var(--line); border-top: 3px solid var(--ink); border-radius: 4px; padding: 0.16in 0.18in; }
+.tile.teal-top { border-top-color: var(--muted); }
+.tile h4 { font-size: 10.5pt; font-weight: 700; color: var(--ink); margin-bottom: 0.06in; }
+.tile p { font-size: 9.2pt; line-height: 1.5; }
+.tile .tag { display: block; font-size: 6.8pt; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 0.05in; }
+
+/* Tables */
+table.formal { width: 100%; border-collapse: collapse; font-size: 9.4pt; }
+table.formal th { text-align: left; font-size: 7.6pt; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink); border-bottom: 2px solid var(--ink); padding: 0.07in 0.1in; }
+table.formal td { padding: 0.075in 0.1in; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.4; }
+table.formal td.k { font-weight: 600; color: var(--ink); white-space: nowrap; }
+table.formal.compact td { padding: 0.06in 0.1in; font-size: 9pt; }
+
+/* Callouts */
+.callout { display: flex; gap: 0.18in; border-left: 3px solid var(--ink); background: var(--panel);
+  padding: 0.14in 0.18in; border-radius: 0 4px 4px 0; }
+.callout.tip { border-left-color: var(--muted); }
+.callout.warn { border-left-color: var(--warn-line); background: var(--warn-bg); }
+.callout .ctitle { font-size: 9.4pt; font-weight: 700; color: var(--ink); flex: none; width: 1.55in; }
+.callout p { font-size: 9.4pt; line-height: 1.5; }
+
+/* Metrics */
+.metrics { display: flex; gap: 0.16in; }
+.metric { flex: 1; border: 1px solid var(--line); border-radius: 4px; background: #fff;
+  text-align: center; padding: 0.14in 0.08in; }
+.metric .num { font-size: 18pt; font-weight: 700; color: var(--ink); }
+.metric .lab { font-size: 7pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted); margin-top: 0.04in; }
+
+/* Numbered flow */
+.flow { display: flex; margin: 0.1in 0 0.05in; }
+.fstep { flex: 1; text-align: center; position: relative; padding: 0 0.05in; }
+.fstep .dot { width: 0.42in; height: 0.42in; border-radius: 50%; border: 2px solid var(--ink); background: #fff;
+  color: var(--ink); font-weight: 700; font-size: 12pt; line-height: 0.38in; margin: 0 auto 0.08in;
+  position: relative; z-index: 2; }
+.fstep.alt .dot { background: var(--ink); color: #fff; }
+.fstep::before { content: ''; position: absolute; top: 0.21in; left: -50%; width: 100%; height: 1px;
+  background: var(--line); z-index: 1; }
+.fstep:first-child::before { display: none; }
+.fstep h5 { font-size: 9.4pt; font-weight: 700; color: var(--ink); margin-bottom: 0.04in; }
+.fstep p { font-size: 8.6pt; line-height: 1.4; color: var(--muted); }
+
+/* Lists */
+ol.steps { margin-left: 0.22in; }
+ol.steps li { font-size: 10pt; line-height: 1.55; margin-bottom: 0.08in; }
+.check-row { display: flex; gap: 0.12in; align-items: flex-start; padding: 0.08in 0; border-bottom: 1px solid var(--line); }
+.check-row .box { width: 0.16in; height: 0.16in; border: 1.5px solid var(--ink); border-radius: 3px; flex: none;
+  font-size: 8pt; line-height: 0.13in; text-align: center; color: var(--ink); margin-top: 0.02in; }
+.check-row p { font-size: 10pt; line-height: 1.45; }
+
+/* Code */
+.code { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; color: var(--ink);
+  font-family: var(--mono); font-size: 8.2pt; line-height: 1.55; padding: 0.14in 0.16in; white-space: pre; }
+.code .cm { color: var(--muted); }
+.code .st { color: #065f46; }
+
+/* Footer */
+.pfoot { position: absolute; left: var(--pad); right: var(--pad); bottom: 0.35in; display: flex;
+  justify-content: space-between; border-top: 1px solid var(--line); padding-top: 0.08in;
+  font-size: 7.4pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+/* Spacing helpers */
+.mt-s { margin-top: 0.12in; }
+.mt-m { margin-top: 0.22in; }
+.mt-l { margin-top: 0.3in; }
+
+/* Flow chart (vertical, two phases) */
+.chart { margin-top: 0.06in; }
+.phase-label { font-size: 7.4pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin: 0.04in 0 0.06in; }
+.node { display: flex; gap: 0.14in; align-items: center; border: 1.5px solid var(--ink); border-radius: 6px;
+  padding: 0.1in 0.16in; background: #fff; }
+.node.use { border-color: var(--muted); background: var(--panel); }
+.node .n { flex: none; width: 0.3in; height: 0.3in; border-radius: 50%; background: var(--ink); color: #fff;
+  font-weight: 700; font-size: 9.5pt; line-height: 0.3in; text-align: center; }
+.node.use .n { background: #fff; color: var(--ink); border: 1.5px solid var(--ink); line-height: 0.27in; }
+.node h5 { font-size: 9.8pt; font-weight: 700; color: var(--ink); }
+.node p { font-size: 8.4pt; line-height: 1.35; color: var(--body); margin-top: 0.01in; }
+.arrow { width: 0; height: 0; margin: 0.03in auto; border-left: 0.07in solid transparent;
+  border-right: 0.07in solid transparent; border-top: 0.1in solid var(--ink); margin: 0.05in auto; }
+.boundary { display: flex; align-items: center; gap: 0.12in; margin: 0.1in 0; font-size: 7.8pt;
+  font-weight: 600; color: var(--warn-line); }
+.boundary::before, .boundary::after { content: ''; flex: 1; border-top: 1.5px dashed var(--warn-line); }

@@ -24,7 +24,6 @@ import java.nio.file.Files
 import java.nio.file.StandardCopyOption
 import java.util.UUID
 import kotlin.coroutines.resume
-import kotlin.math.abs
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -428,12 +427,6 @@ class VideoExporter(
                     .extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT)
                     ?.toInt() == settings.height
             )
-            val actual =
-                retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)!!.toLong() *
-                    1000
-            require(abs(actual - durationUs) <= 1_000_000 / settings.frameRate + 1000) {
-                "duration $actual expected $durationUs"
-            }
             retriever.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)?.recycle()
                 ?: error("No decoded first frame")
             retriever
@@ -442,12 +435,27 @@ class VideoExporter(
             val extractor = MediaExtractor()
             try {
                 extractor.setDataSource(file.path)
-                val types =
-                    (0 until extractor.trackCount).map {
-                        extractor.getTrackFormat(it).getString(MediaFormat.KEY_MIME) ?: ""
+                val formats = (0 until extractor.trackCount).map { extractor.getTrackFormat(it) }
+                fun MediaFormat.mime() = getString(MediaFormat.KEY_MIME) ?: ""
+                val video =
+                    requireNotNull(formats.firstOrNull { it.mime().startsWith("video/") }) {
+                        "No video track"
                     }
-                require(types.any { it.startsWith("video/") })
-                if (expectAudio) require(types.any { it.startsWith("audio/") })
+                val audio = formats.firstOrNull { it.mime().startsWith("audio/") }
+                if (expectAudio) requireNotNull(audio) { "No audio track" }
+                // Per-track lengths: the file-level duration can include AAC priming on some platforms.
+                require(video.containsKey(MediaFormat.KEY_DURATION)) { "Video track has no duration" }
+                checkEncodedDurations(
+                    durationUs,
+                    settings.frameRate,
+                    video.getLong(MediaFormat.KEY_DURATION),
+                    audio
+                        ?.takeIf { it.containsKey(MediaFormat.KEY_DURATION) }
+                        ?.getLong(MediaFormat.KEY_DURATION),
+                    audio
+                        ?.takeIf { it.containsKey(MediaFormat.KEY_SAMPLE_RATE) }
+                        ?.getInteger(MediaFormat.KEY_SAMPLE_RATE),
+                )
             } finally {
                 extractor.release()
             }

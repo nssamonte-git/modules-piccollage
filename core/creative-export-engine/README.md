@@ -106,13 +106,13 @@ with `res/xml/export_paths.xml`: `<paths><files-path name="exports" path="export
 - Output is H.264 and AAC in MP4. HDR input is tone-mapped to SDR. Video clips are scaled to fit the frame.
 - An H.264 encoder for the size and frame rate is checked first. Bad configuration or unavailable assets return `UNSUPPORTED`; encoding and validation errors return `IO`.
 - If decoding fails, the export is retried once with software decoders.
-- Before publishing, the file is checked for size, duration (within one frame), decodable first and middle frames, and an audio track when audio is expected. Music `placementUs` must be before the end of the timeline.
+- Before publishing, the file is checked for size, decodable first and middle frames, and an audio track when audio is expected. The video track must match the timeline within one frame. The audio track may also carry the AAC priming its edit list skips (at most 2112 samples, plus one 1024-sample frame either way); some platforms count that priming in the file-level duration, so that value is not used. Music `placementUs` must be before the end of the timeline.
 - `state` is one flow per exporter and is not reset to `Idle`. `StillExporter` does not update it.
 - On cancel or failure, temporary files are removed and the destination is not created.
 
 ## Tests
 
-`TimelineTest` covers crossfade duration and clip start times, music source-time offsets, and rejection of overlap on a mixed timeline.
+`TimelineTest` covers crossfade duration and clip start times, music source-time offsets, and rejection of overlap on a mixed timeline. `EncodedDurationTest` covers the export length check: video within one frame, audio with priming accepted, and longer or shorter audio rejected.
 
 ```bash
 ./gradlew :core-creative-export-engine:testDebugUnitTest

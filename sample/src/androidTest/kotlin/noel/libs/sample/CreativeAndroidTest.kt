@@ -127,12 +127,9 @@ class CreativeAndroidTest {
                     "320",
                     r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH),
                 )
-                assertTrue(
-                    kotlin.math.abs(
-                        r.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)!!.toLong() -
-                            3500
-                    ) <= 34
-                )
+                // The video track sets the length; the file-level duration can include AAC priming.
+                val videoUs = trackDurationUs(file, "video/")
+                assertTrue("video duration $videoUs", kotlin.math.abs(videoUs - 3_500_000) <= 34_000)
                 assertNotNull(
                     r.getFrameAtTime(1_750_000, MediaMetadataRetriever.OPTION_CLOSEST)?.also {
                         it.recycle()
@@ -216,6 +213,19 @@ class CreativeAndroidTest {
         task.cancelAndJoin()
         assertFalse(destination.exists())
         assertEquals(ExportState.Canceled, env.video.state.value)
+    }
+
+    private fun trackDurationUs(file: File, mimePrefix: String): Long {
+        val extractor = MediaExtractor()
+        try {
+            extractor.setDataSource(file.path)
+            return (0 until extractor.trackCount)
+                .map { extractor.getTrackFormat(it) }
+                .first { it.getString(MediaFormat.KEY_MIME)!!.startsWith(mimePrefix) }
+                .getLong(MediaFormat.KEY_DURATION)
+        } finally {
+            extractor.release()
+        }
     }
 
     private fun firstAudibleUs(file: File): Long {

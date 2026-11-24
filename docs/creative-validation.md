@@ -17,7 +17,7 @@ Use JDK 25 from Android Studio. Encoder, GPU and font behavior needs Android exe
 - API 37 ARM emulator: 8/8 PASS.
 - These execute real Android APIs: OpenGL versus CPU pixel parity, source-alpha preservation, PNG/JPEG decoding, corrupt generated-media rejection, H.264/AAC MP4 creation/playback, decoded audio onset within 50 ms, duration within one frame, trim/overlay, canceled-output cleanup and lifecycle-aware sample launch.
 - The API 37 run found a runtime failure in its advertised H.264 decoder. One bounded retry with a platform software decoder recovered successfully. A duration assertion found 63 ms of encoder padding beyond a 3.5-second composition; the muxer now terminates every track on the composition clock without relaxing the tolerance.
-- API 35 ARM emulator (Google APIs image): two MP4 tests first failed with "duration 3536000 expected 3500000". The file was correct: video and movie headers were exactly 3.5 s, and the audio edit list skipped 1600 AAC priming samples. That image's `MediaMetadataRetriever` reports the audio track's raw media length. Finalization and the test now take the length from the video track and check audio separately with an AAC-priming allowance (`EncodedDurationTest`). After the change: API 35 8/8 PASS.
+- API 35 ARM emulator (Google APIs image): two MP4 tests first failed with "duration 3536000 expected 3500000". The file was correct: video and movie headers were exactly 3.5 s, and the audio edit list skipped 1600 AAC priming samples. That image's `MediaMetadataRetriever` reports the audio track's raw media length. Finalization and the test now take the length from the video track and check audio separately with an AAC-priming allowance (`EncodedDurationTest`). After the change: API 35 8/8 PASS; on 0.2.2, API 26 8/8 PASS with the sample's insets checked visually.
 - The same API 35 run found the sample's tab chips hidden under the platform action bar (targetSdk 37 enforces edge-to-edge). The sample now uses a no-action-bar theme with safe-drawing insets. Its AI Tools and AI Images tabs were then tapped through by hand: apply, undo, dismiss, stale proposal, success, failure, timeout and cancel all behaved as designed.
 - Visual inspection of the actual API 26 and API 37 sample screenshots passed. The retained [API 37 screenshot](images/creative-playground-api37.png) uses original generated media.
 
@@ -35,7 +35,7 @@ No fresh decompilation or third-party implementation/assets were imported. Backe
 | JVM unit tests | 57 PASS, zero failures/errors (5 added with the pinch, draft-limit and full-journal fixes; 4 with the export length check) |
 | Build-validator plugin regression tests | 4 PASS |
 | Security findings | 0 critical/high/medium; 2 existing low warnings; zero blocking findings |
-| API 26 instrumentation | 8 PASS |
+| API 26 instrumentation | 8 PASS, rerun on 0.2.2 |
 | API 35 instrumentation (after the export length check) | 8 PASS |
 | API 37 instrumentation | 8 PASS, rerun after the export length check |
 | Physical phone, API 29, after the fixes | 8 PASS |

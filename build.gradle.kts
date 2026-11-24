@@ -15,3 +15,10 @@ tasks.register("publishToMavenLocal") {
     description = "Publishes the build validator plugin; the modules' own publishToMavenLocal tasks run too."
     dependsOn(gradle.includedBuild("build-validator-plugin").task(":publishToMavenLocal"))
 }
+
+// Library-specific checks recognize the project's module(...) helper and artifact split.
+val verifyCreativeModules = tasks.register<Exec>("verifyCreativeModules") {
+    group = "verification"
+    commandLine("python3", "scripts/check-creative-modules.py")
+}
+tasks.named("validateThreats") { dependsOn(verifyCreativeModules) }

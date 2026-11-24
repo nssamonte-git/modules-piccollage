@@ -1,0 +1,37 @@
+id	capability	module	implementation_kind	behavior_or_boundary
+1	editor-command-history	core-creative-history-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+2	versioned-creative-documents	core-creative-documents-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+3	content-aware-layout-engine	core-creative-layout-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+4	interactive-canvas-editor	core-creative-canvas-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+5	declarative-template-recipes	core-creative-templates-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+6	gpu-image-effect-pipelines	core-creative-effects-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+7	cutout-mask-editing	core-creative-masks-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+8	media-composition-export	core-creative-export-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+9	rich-text-graphic-editing	core-creative-text-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+10	ai-editor-tool-orchestration	core-creative-ai-tools-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+11	ai-image-editing-workflows	core-creative-ai-images-engine	engine-and-compose	Working engine, optional UI, sample integration and targeted tests
+12	multi-page-projects	core-creative-documents-engine	implemented	Page identities and ordering; DuplicatePage
+13	draft-storage-and-reopening	core-creative-documents-engine	implemented	SaveDraft/OpenDraft; recoverable revision publication
+14	background-project-backup	core-creative-documents-engine	host-adapter	BackupDraft + BackupPort; host scheduling and transport
+15	asset-upload-preflight	core-creative-documents-engine	implemented-policy	UploadPreflight binds account/content revision/expiry; host issues permit
+16	local-versus-cloud-deletion	core-creative-documents-engine	host-adapter	DeleteProject selects LOCAL/REMOTE/BOTH; host deletion adapters
+17	album-membership-and-identity	core-creative-documents-engine	implemented-policy	AlbumMembership account-scoped stable document IDs
+18	media-selection-and-limits	core-creative-documents-engine	implemented-policy	MediaEligibility bounds count/pixels/media types
+19	template-discovery-and-filtering	core-creative-templates-engine	implemented	FilterRecipes + TemplateGallery; compatibility rechecked when applied
+20	content-packs-and-purchase-restoration	core-creative-documents-engine	host-adapter	PaidContentGateway/RestorePurchases; host billing and content catalog
+21	premium-content-preuse-evaluation	core-creative-templates-engine	host-adapter	ApplyRecipe rechecks Entitlements; host server authority
+22	feature-and-format-eligibility	core-creative-documents-engine	implemented-policy	MediaEligibility; exporter codec/configuration preflight
+23	lifecycle-aware-media-preview	core-creative-export-engine	implemented-adapter	PreparedVideo owned lifecycle; host releases preview player before closing
+24	slideshow-timing-and-transitions	core-creative-export-engine	implemented	Timeline microseconds; PhotoOverlay crossfades; mixed-media cuts
+25	background-music-offsets	core-creative-export-engine	implemented	Music source trim/placement/loop/mute; Media3 audio sequence
+26	page-and-object-animation	core-creative-export-engine	implemented	LayerMotion uses composition clock in photo timelines
+27	freehand-drawing-and-paths	core-creative-canvas-engine	implemented	Stroke and AddDrawing; document-coordinate paths
+28	image-analysis-cache	core-creative-layout-engine	implemented	AnalysisCache revision/orientation/analyzer/account key and purge
+29	photo-filters-and-color-effects	core-creative-effects-engine	implemented	PixelEffects CPU reference and GpuImageEffects built-ins
+30	generated-lettering-workflow	core-creative-ai-images-engine	host-adapter	ImageProvider lettering jobs + semantic LetteringHistory/fallback
+31	unfinished-project-reminders	core-creative-documents-engine	host-adapter	RemindUnfinishedProject + ReminderPort; host OS scheduling
+32	typed-failures-and-cancellation	core-creative-model	implemented	Outcome/CreativeError; coroutine and local job cancellation
+33	multimodal-message-contracts	core-creative-ai-tools-engine	implemented-contract	MessagePart typed text/image/file/tool envelopes; host transport
+34	ai-usage-and-cache-accounting	core-creative-model	host-adapter	Usage + Telemetry counters; host provider accounting/cache metadata
+35	ai-traces-feedback-and-data-minimization	core-creative-model	host-adapter	Telemetry operation/state only; host feedback/privacy/retention
+36	export-share-and-print-handoff	core-creative-export-engine	implemented-adapter	Verified outputs; AndroidDelivery share and still-image print

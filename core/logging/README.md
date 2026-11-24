@@ -5,7 +5,7 @@ A tiny logging facade. Nothing is logged until a sink is installed, and messages
 ## Use
 
 ```kotlin
-implementation("noel.libs:core-logging:0.1.0")
+implementation("noel.libs:core-logging:0.2.0")
 ```
 
 ```kotlin

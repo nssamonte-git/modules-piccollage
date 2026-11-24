@@ -4,12 +4,25 @@ Reusable Android modules and build tooling for your apps. It is one Gradle proje
 
 ## Catalog
 
-| What | Use it in an app | Folder |
-|---|---|---|
-| Mobile build validator (Gradle plugin): fails the build on critical or high security findings in the source | `plugins { id("noel.libs.build-validator") }` in the root `build.gradle.kts` | [build-validator-plugin/](build-validator-plugin/) |
-| Logging facade: pluggable sinks, lazy messages, Logcat sink | `implementation("noel.libs:core-logging:0.1.0")` | [core/logging/](core/logging/) |
+Group `noel.libs`, version **0.2.0** (`library.version` in `gradle.properties`). Engines are Android AARs with framework-free domain packages and no Compose dependency. Compose artifacts are optional and transitively expose their corresponding engine.
 
-Group `noel.libs`, version `library.version` in [gradle.properties](gradle.properties) (now `0.1.0`).
+| Capability | Engine artifact suffix | Optional UI artifact suffix |
+|---|---|---|
+| Transactional undo/redo and gesture merging | `core-creative-history-engine` | `core-creative-history-compose` |
+| Versioned drafts, page duplication, account-scoped storage and operation journal | `core-creative-documents-engine` | `core-creative-documents-compose` |
+| Transforms, hit tests, layer ordering and drawing paths | `core-creative-canvas-engine` | `core-creative-canvas-compose` |
+| Typed, validated recipes and entitlement-aware application | `core-creative-templates-engine` | `core-creative-templates-compose` |
+| Global assignment, subject-aware crops and analysis cache | `core-creative-layout-engine` | `core-creative-layout-compose` |
+| OpenGL effects with CPU fallback and graph validation | `core-creative-effects-engine` | `core-creative-effects-compose` |
+| Source-space erase/restore masks and segmentation-mask adapter | `core-creative-masks-engine` | `core-creative-masks-compose` |
+| Grapheme-safe text and style editing | `core-creative-text-engine` | `core-creative-text-compose` |
+| PNG/JPEG, MP4 timelines, crossfades, overlays, audio, sharing and printing | `core-creative-export-engine` | `core-creative-export-compose` |
+| Allowlisted editor operations with durable logical identity | `core-creative-ai-tools-engine` | `core-creative-ai-tools-compose` |
+| Provider-neutral image jobs, reconciliation and reversible acceptance | `core-creative-ai-images-engine` | `core-creative-ai-images-compose` |
+
+All suffixes use `noel.libs:<suffix>:0.2.0`. Shared artifacts are `core-creative-model`, `core-creative-renderer`, and `core-creative-compose-common`. Existing `core-logging` and the `noel.libs.build-validator` plugin remain available at the same library version.
+
+See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits.
 
 ## Use it in an app
 
@@ -34,7 +47,7 @@ Then use the catalog lines above. With `includeBuild`, the plugin needs no versi
 ./gradlew publishToMavenLocal
 ```
 
-In the app's `settings.gradle.kts`, add `mavenLocal()` first in both `pluginManagement.repositories` and `dependencyResolutionManagement.repositories`. Then use the plugin with a version, `id("noel.libs.build-validator") version "0.1.0"`, and the dependency lines above.
+In the app's `settings.gradle.kts`, add `mavenLocal()` first in both `pluginManagement.repositories` and `dependencyResolutionManagement.repositories`. Then use the plugin with a version, `id("noel.libs.build-validator") version "0.2.0"`, and the dependency lines above.
 
 ### Option 3: a shared Maven repository (later)
 

@@ -10,7 +10,7 @@
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-history-compose:0.2.1")
+implementation("noel.libs:core-creative-history-compose:0.2.2")
 ```
 
 Brings in `core-creative-history-engine`, `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation-layout (through the Compose BOM) via `api`.

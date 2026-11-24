@@ -11,7 +11,7 @@ Draws one page of a `CreativeDocument` into an Android `Bitmap`. It defines the 
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-renderer:0.2.1")
+implementation("noel.libs:core-creative-renderer:0.2.2")
 ```
 
 Brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`.

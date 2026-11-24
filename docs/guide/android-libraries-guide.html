@@ -23,7 +23,7 @@
       <div class="metrics on-blue">
         <div class="metric"><div class="num">25</div><div class="lab">Creative modules</div></div>
         <div class="metric"><div class="num">11</div><div class="lab">Feature pairs</div></div>
-        <div class="metric"><div class="num">0.2.1</div><div class="lab">Current version</div></div>
+        <div class="metric"><div class="num">0.2.2</div><div class="lab">Current version</div></div>
       </div>
     </div>
 
@@ -142,12 +142,12 @@
         <p>11 features, each an engine (no Compose) plus optional Compose UI, on a shared model and renderer.</p></div></div>
       <div class="arrow"></div>
       <div class="node"><div class="n">4</div><div><h5>Write original code and tests</h5>
-        <p>New Kotlin implementation in 25 modules, with 53 unit tests and 8 device tests.</p></div></div>
+        <p>New Kotlin implementation in 25 modules, with 57 unit tests and 8 device tests.</p></div></div>
       <div class="arrow"></div>
       <div class="node"><div class="n">5</div><div><h5>Check every build</h5>
         <p>Module graph check, mobile build validator, unit tests and an R8 release build of the sample.</p></div></div>
       <div class="arrow"></div>
-      <div class="node"><div class="n">6</div><div><h5>Publish version 0.2.1</h5>
+      <div class="node"><div class="n">6</div><div><h5>Publish version 0.2.2</h5>
         <p>Available from source (<code class="inline">includeBuild</code>) or Maven Local; code on GitHub.</p></div></div>
 
       <div class="arrow"></div>
@@ -191,11 +191,11 @@
     undo, drafts and export.</p>
 
     <div class="metrics mt-l">
-      <div class="metric"><div class="num">53</div><div class="lab">Unit tests</div></div>
+      <div class="metric"><div class="num">57</div><div class="lab">Unit tests</div></div>
       <div class="metric"><div class="num">8</div><div class="lab">Device tests</div></div>
-      <div class="metric"><div class="num">3</div><div class="lab">Android versions tested</div></div>
+      <div class="metric"><div class="num">4</div><div class="lab">Android versions tested</div></div>
     </div>
-    <p class="body mt-s" style="font-size:8.6pt;">Device tests ran on API 26 and API 37 emulators and a physical API 29 phone.
+    <p class="body mt-s" style="font-size:8.6pt;">Device tests ran on API 26, API 35 and API 37 emulators and a physical API 29 phone.
     A module graph check also blocks circular dependencies and keeps engines free of Compose.</p>
   </div>
   <div class="pfoot"><span>Android Libraries Guide</span><span>PAGE 5 OF 10</span></div>
@@ -207,7 +207,7 @@
     <div class="eyebrow">Catalog</div>
     <h1 class="ptitle">Module Catalog</h1>
     <div class="title-rule"><div class="a"></div><div class="b"></div><div class="c"></div></div>
-    <p class="lede">Every module is published as <code class="inline">noel.libs:&lt;name&gt;:0.2.1</code>.
+    <p class="lede">Every module is published as <code class="inline">noel.libs:&lt;name&gt;:0.2.2</code>.
     Add the engine, and the Compose module only if you want its UI.</p>
 
     <table class="formal compact">
@@ -295,7 +295,7 @@
 <div class="code"><span class="cm">// root build.gradle.kts of the app</span>
 plugins {
     id(<span class="st">"noel.libs.build-validator"</span>)               <span class="cm">// from source (includeBuild)</span>
-    <span class="cm">// id("noel.libs.build-validator") version "0.2.1"   // from Maven Local</span>
+    <span class="cm">// id("noel.libs.build-validator") version "0.2.2"   // from Maven Local</span>
 }</div>
 
     <ol class="steps mt-l">
@@ -358,9 +358,9 @@ includeBuild(<span class="st">"../modules-piccollage"</span>)</div>
 
     <p class="body"><b>Then add the modules you need</b> to an app module:</p>
 <div class="code">dependencies {
-    implementation(<span class="st">"noel.libs:core-creative-history-engine:0.2.1"</span>)
-    implementation(<span class="st">"noel.libs:core-creative-canvas-compose:0.2.1"</span>)
-    implementation(<span class="st">"noel.libs:core-creative-renderer:0.2.1"</span>)
+    implementation(<span class="st">"noel.libs:core-creative-history-engine:0.2.2"</span>)
+    implementation(<span class="st">"noel.libs:core-creative-canvas-compose:0.2.2"</span>)
+    implementation(<span class="st">"noel.libs:core-creative-renderer:0.2.2"</span>)
 }</div>
 
     <p class="body mt-s" style="font-size:8.6pt;">Requirements: minSdk 26 or higher, and JDK 25 to build the library. Publishing to a shared

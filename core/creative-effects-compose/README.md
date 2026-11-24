@@ -10,7 +10,7 @@ A Compose panel of effect sliders for [core-creative-effects-engine](../creative
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-effects-compose:0.2.1")
+implementation("noel.libs:core-creative-effects-compose:0.2.2")
 ```
 
 It brings in `core-creative-effects-engine` (and through it `core-creative-renderer`), `core-creative-model`, `kotlinx-coroutines-core`, and the Compose BOM, `compose-ui` and `compose-foundation-layout` through `api`. Material 3 and `core-creative-compose-common` are internal (`implementation`).

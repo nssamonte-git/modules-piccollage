@@ -44,4 +44,4 @@ No fresh decompilation or third-party implementation/assets were imported. Backe
 | Independent engine and Compose Maven Local consumers | PASS |
 | Maven engine runtime dependency report | No `androidx.compose` dependency |
 
-The 0.2.0 artifacts were published to Maven Local for these checks. On 2026-11-24 the 0.2.1 artifacts were published to Maven Local and the required checks, plugin tests, both consumer builds (composite and Maven Local) and the engine-only no-Compose check passed again. No remote publication was performed. Build logs and raw emulator diagnostics remain temporary; this record retains only sanitized outcomes.
+The 0.2.0 artifacts were published to Maven Local for these checks. On 2026-11-24 the 0.2.2 artifacts were published to Maven Local and the required checks, plugin tests, both consumer builds (composite and Maven Local) and the engine-only no-Compose check passed again. The 0.2.2 artifacts (export length check, sample inset fix) were then published to Maven Local and the same checks passed. No remote publication was performed. Build logs and raw emulator diagnostics remain temporary; this record retains only sanitized outcomes.

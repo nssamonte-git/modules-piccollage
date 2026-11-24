@@ -10,7 +10,7 @@ Two small layout composables shared by the creative `-compose` modules: `Creativ
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-compose-common:0.2.1")
+implementation("noel.libs:core-creative-compose-common:0.2.2")
 ```
 
 Brings in `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation-layout (through the Compose BOM) via `api`. Material 3 is used internally.

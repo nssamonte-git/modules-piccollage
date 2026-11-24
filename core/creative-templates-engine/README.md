@@ -13,7 +13,7 @@ Typed template recipes for a `CreativeDocument`. A `Recipe` is a list of steps t
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-templates-engine:0.2.1")
+implementation("noel.libs:core-creative-templates-engine:0.2.2")
 ```
 
 It brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`. You also need an `EditSession`; `HistorySession` from `core-creative-history-engine` is the usual one.

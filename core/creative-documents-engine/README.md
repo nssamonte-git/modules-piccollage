@@ -12,7 +12,7 @@ Local drafts and project-level policy for creative documents. `FileDocumentRepos
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-documents-engine:0.2.1")
+implementation("noel.libs:core-creative-documents-engine:0.2.2")
 ```
 
 Brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`. Usually paired with `core-creative-history-engine`.

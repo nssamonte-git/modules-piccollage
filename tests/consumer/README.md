@@ -1,6 +1,6 @@
 # Independent consumer fixtures
 
-These Android library fixtures compile production engine APIs and the optional Compose API independently of the sample. Versions come from the library catalog. Maven coordinates are the actual 0.2.1 artifacts.
+These Android library fixtures compile production engine APIs and the optional Compose API independently of the sample. Versions come from the library catalog. Maven coordinates are the actual 0.2.2 artifacts.
 
 From the library root:
 

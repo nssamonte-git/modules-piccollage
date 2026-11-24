@@ -12,7 +12,7 @@ Runs editor tool calls proposed by an AI model, safely. Only three tools exist (
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-ai-tools-engine:0.2.1")
+implementation("noel.libs:core-creative-ai-tools-engine:0.2.2")
 ```
 
 Brings in through `api`: `core-creative-model` (which holds `OperationStore`, `MemoryOperationStore`, `EditSession` and `Outcome`) and `kotlinx-coroutines-core`. You also need an `EditSession`, usually `HistorySession` from `core-creative-history-engine`, and for a durable journal `FileOperationStore` from `core-creative-documents-engine`.

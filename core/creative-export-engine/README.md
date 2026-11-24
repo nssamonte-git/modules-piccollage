@@ -11,7 +11,7 @@ Turns a `CreativeDocument` into files: a PNG or JPEG of one page, or an MP4 buil
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-export-engine:0.2.1")
+implementation("noel.libs:core-creative-export-engine:0.2.2")
 ```
 
 Brings in through `api`: `core-creative-model`, `core-creative-renderer`, `androidx.media3:media3-transformer` and `kotlinx-coroutines-core`. Media3 effect and ExoPlayer are internal (`implementation`). You usually pair it with a history engine that holds the document, and with the same `DocumentRenderer` you use for preview.

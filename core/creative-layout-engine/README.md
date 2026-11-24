@@ -12,7 +12,7 @@ Assigns photos to layout slots and picks a crop for each one. `SuggestLayout` ma
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-layout-engine:0.2.1")
+implementation("noel.libs:core-creative-layout-engine:0.2.2")
 ```
 
 It brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`. It is usually paired with an `EditSession` (`core-creative-history-engine`) to commit the chosen placements.

@@ -11,7 +11,7 @@ A tiny logging facade for Android apps. You install one or more sinks (Logcat, a
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-logging:0.2.1")
+implementation("noel.libs:core-logging:0.2.2")
 ```
 
 It has no `api` dependencies.

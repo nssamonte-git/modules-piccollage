@@ -10,7 +10,7 @@ A Compose panel that shows one proposed AI edit (a `ToolCall`) with Apply and Di
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-ai-tools-compose:0.2.0")
+implementation("noel.libs:core-creative-ai-tools-compose:0.2.1")
 ```
 
 Brings in through `api`: `core-creative-ai-tools-engine`, `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation layout from the Compose BOM. Material 3 and `core-creative-compose-common` are internal.

@@ -4,7 +4,7 @@ Reusable Android modules and build tooling for your apps. It is one Gradle proje
 
 ## Catalog
 
-Group `noel.libs`, version **0.2.0** (`library.version` in `gradle.properties`). Engines are Android AARs with framework-free domain packages and no Compose dependency. Compose artifacts are optional and transitively expose their corresponding engine.
+Group `noel.libs`, version **0.2.1** (`library.version` in `gradle.properties`). Engines are Android AARs with framework-free domain packages and no Compose dependency. Compose artifacts are optional and transitively expose their corresponding engine.
 
 | Capability | Engine artifact suffix | Optional UI artifact suffix |
 |---|---|---|
@@ -20,7 +20,7 @@ Group `noel.libs`, version **0.2.0** (`library.version` in `gradle.properties`).
 | Allowlisted editor operations with durable logical identity | [`core-creative-ai-tools-engine`](core/creative-ai-tools-engine/README.md) | [`core-creative-ai-tools-compose`](core/creative-ai-tools-compose/README.md) |
 | Provider-neutral image jobs, reconciliation and reversible acceptance | [`core-creative-ai-images-engine`](core/creative-ai-images-engine/README.md) | [`core-creative-ai-images-compose`](core/creative-ai-images-compose/README.md) |
 
-All suffixes use `noel.libs:<suffix>:0.2.0`. Shared artifacts are [`core-creative-model`](core/creative-model/README.md), [`core-creative-renderer`](core/creative-renderer/README.md), and [`core-creative-compose-common`](core/creative-compose-common/README.md). Existing [`core-logging`](core/logging/README.md) and the `noel.libs.build-validator` plugin remain available at the same library version.
+All suffixes use `noel.libs:<suffix>:0.2.1`. Shared artifacts are [`core-creative-model`](core/creative-model/README.md), [`core-creative-renderer`](core/creative-renderer/README.md), and [`core-creative-compose-common`](core/creative-compose-common/README.md). Existing [`core-logging`](core/logging/README.md) and the `noel.libs.build-validator` plugin remain available at the same library version.
 
 Each module folder has a README with what it is for, a quick start, the main types, what your app provides, and its limits. See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits.
 
@@ -47,7 +47,7 @@ Then use the catalog lines above. With `includeBuild`, the plugin needs no versi
 ./gradlew publishToMavenLocal
 ```
 
-In the app's `settings.gradle.kts`, add `mavenLocal()` first in both `pluginManagement.repositories` and `dependencyResolutionManagement.repositories`. Then use the plugin with a version, `id("noel.libs.build-validator") version "0.2.0"`, and the dependency lines above.
+In the app's `settings.gradle.kts`, add `mavenLocal()` first in both `pluginManagement.repositories` and `dependencyResolutionManagement.repositories`. Then use the plugin with a version, `id("noel.libs.build-validator") version "0.2.1"`, and the dependency lines above.
 
 ### Option 3: a shared Maven repository (later)
 

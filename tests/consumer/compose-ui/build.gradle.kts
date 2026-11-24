@@ -8,4 +8,4 @@ android {
  compileOptions { sourceCompatibility=JavaVersion.VERSION_11; targetCompatibility=JavaVersion.VERSION_11 }
  buildFeatures { compose=true }
 }
-dependencies { implementation("noel.libs:core-creative-text-compose:0.2.0") }
+dependencies { implementation("noel.libs:core-creative-text-compose:0.2.1") }

@@ -10,7 +10,7 @@ A small Compose panel for export: PNG, JPEG and MP4 buttons, a progress bar with
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-export-compose:0.2.0")
+implementation("noel.libs:core-creative-export-compose:0.2.1")
 ```
 
 Brings in through `api`: `core-creative-export-engine` (and with it the model, renderer and Media3 Transformer), `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation layout from the Compose BOM. Material 3 and `core-creative-compose-common` are internal.

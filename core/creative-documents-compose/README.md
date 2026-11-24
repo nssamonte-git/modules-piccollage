@@ -10,7 +10,7 @@
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-documents-compose:0.2.0")
+implementation("noel.libs:core-creative-documents-compose:0.2.1")
 ```
 
 Brings in `core-creative-documents-engine`, `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation-layout (through the Compose BOM) via `api`. `core-creative-compose-common` is used internally (`implementation`).

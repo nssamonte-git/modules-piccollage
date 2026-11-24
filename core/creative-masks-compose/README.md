@@ -10,7 +10,7 @@ A Compose brush editor for [core-creative-masks-engine](../creative-masks-engine
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-masks-compose:0.2.0")
+implementation("noel.libs:core-creative-masks-compose:0.2.1")
 ```
 
 It brings in `core-creative-masks-engine` (and through it `core-creative-renderer`), `core-creative-model`, `kotlinx-coroutines-core`, and the Compose BOM, `compose-ui` and `compose-foundation-layout` through `api`. Material 3 and `core-creative-compose-common` are internal (`implementation`).

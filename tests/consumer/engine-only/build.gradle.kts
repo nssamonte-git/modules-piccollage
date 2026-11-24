@@ -6,4 +6,4 @@ android {
  defaultConfig { minSdk=26 }
  compileOptions { sourceCompatibility=JavaVersion.VERSION_11; targetCompatibility=JavaVersion.VERSION_11 }
 }
-dependencies { implementation("noel.libs:core-creative-history-engine:0.2.0") }
+dependencies { implementation("noel.libs:core-creative-history-engine:0.2.1") }

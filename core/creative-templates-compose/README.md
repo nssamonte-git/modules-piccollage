@@ -10,7 +10,7 @@ A Compose template picker for [core-creative-templates-engine](../creative-templ
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-templates-compose:0.2.0")
+implementation("noel.libs:core-creative-templates-compose:0.2.1")
 ```
 
 It brings in `core-creative-templates-engine`, `core-creative-model`, `kotlinx-coroutines-core`, and the Compose BOM, `compose-ui` and `compose-foundation-layout` through `api`. Material 3 and `core-creative-compose-common` are internal (`implementation`).

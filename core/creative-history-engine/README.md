@@ -10,7 +10,7 @@
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-history-engine:0.2.0")
+implementation("noel.libs:core-creative-history-engine:0.2.1")
 ```
 
 Brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`. Usually paired with `core-creative-canvas-engine` and `core-creative-history-compose`.

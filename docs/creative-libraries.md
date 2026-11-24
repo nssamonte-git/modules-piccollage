@@ -5,9 +5,9 @@
 Use `includeBuild` or Maven as described in the root README. Add only the capabilities needed by an app. An engine has no transitive Compose dependency; its optional `-compose` artifact adds the components. All new modules use the existing Android convention (minSdk 26, compileSdk 37, Java 11); domains are framework-free Kotlin inside AARs.
 
 ```kotlin
-implementation("noel.libs:core-creative-history-engine:0.2.0")
-implementation("noel.libs:core-creative-canvas-compose:0.2.0")
-implementation("noel.libs:core-creative-renderer:0.2.0")
+implementation("noel.libs:core-creative-history-engine:0.2.1")
+implementation("noel.libs:core-creative-canvas-compose:0.2.1")
+implementation("noel.libs:core-creative-renderer:0.2.1")
 ```
 
 ## Editing and composition

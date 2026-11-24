@@ -11,7 +11,7 @@ The shared data model and contracts for the creative modules: the `CreativeDocum
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-model:0.2.0")
+implementation("noel.libs:core-creative-model:0.2.1")
 ```
 
 Brings in `org.jetbrains.kotlinx:kotlinx-coroutines-core` through `api`. Nothing else.

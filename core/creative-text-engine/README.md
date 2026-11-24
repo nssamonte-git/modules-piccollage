@@ -12,7 +12,7 @@ Validation and editing for text layers. Text is stored as `Content.Text`: the pl
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-text-engine:0.2.0")
+implementation("noel.libs:core-creative-text-engine:0.2.1")
 ```
 
 It brings in `core-creative-model` and `kotlinx-coroutines-core` through `api`. It is usually paired with `core-creative-history-engine` for the `EditSession` and `core-creative-renderer` for drawing.

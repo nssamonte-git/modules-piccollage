@@ -12,7 +12,7 @@ Erase and restore masks for layers. A `Mask` is stored on a `Layer` as a list of
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-masks-engine:0.2.0")
+implementation("noel.libs:core-creative-masks-engine:0.2.1")
 ```
 
 It brings in [`core-creative-renderer`](../creative-renderer/README.md), `core-creative-model` and `kotlinx-coroutines-core` through `api`. It is usually paired with `core-creative-history-engine` for the `EditSession` and [core-creative-effects-engine](../creative-effects-engine/README.md) for the other renderer adapter.

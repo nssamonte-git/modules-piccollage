@@ -10,7 +10,7 @@
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-canvas-compose:0.2.0")
+implementation("noel.libs:core-creative-canvas-compose:0.2.1")
 ```
 
 Brings in `core-creative-canvas-engine`, `core-creative-renderer`, `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation-layout (through the Compose BOM) via `api`. Usually paired with `core-creative-history-engine` and `core-creative-history-compose`.

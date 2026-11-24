@@ -11,7 +11,7 @@ Runs AI image jobs (expand, replace, remove background, lettering) through a pro
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-ai-images-engine:0.2.0")
+implementation("noel.libs:core-creative-ai-images-engine:0.2.1")
 ```
 
 Brings in through `api`: `core-creative-model` (which holds `OperationStore`, `MemoryOperationStore`, `EditSession` and `Outcome`) and `kotlinx-coroutines-core`. You also need an `EditSession`, usually `HistorySession` from `core-creative-history-engine`, and for restart recovery `FileOperationStore` from `core-creative-documents-engine`.

@@ -10,7 +10,7 @@ A Compose panel for AI image editing: a prompt field, a Generate button, Cancel 
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-ai-images-compose:0.2.0")
+implementation("noel.libs:core-creative-ai-images-compose:0.2.1")
 ```
 
 Brings in through `api`: `core-creative-ai-images-engine`, `core-creative-model`, `kotlinx-coroutines-core`, and Compose UI and foundation layout from the Compose BOM. Material 3 and `core-creative-compose-common` are internal.

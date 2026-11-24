@@ -12,7 +12,7 @@ Image effects for layers: brightness, contrast, saturation, grayscale and box bl
 ## Add it
 
 ```kotlin
-implementation("noel.libs:core-creative-effects-engine:0.2.0")
+implementation("noel.libs:core-creative-effects-engine:0.2.1")
 ```
 
 It brings in `core-creative-model`, [`core-creative-renderer`](../creative-renderer/README.md) and `kotlinx-coroutines-core` through `api`. It is usually paired with `core-creative-history-engine` for the `EditSession` and [core-creative-masks-engine](../creative-masks-engine/README.md) for the other renderer adapter.

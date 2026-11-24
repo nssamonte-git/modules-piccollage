@@ -63,4 +63,16 @@ class ToolsTest {
                 is Outcome.Failure
         )
     }
+
+    @Test
+    fun fullJournalReturnsLimitFailureWithoutEditing() = runTest {
+        val s = session()
+        val runner = ToolRunner(MemoryOperationStore(maxEntries = 1))
+        assertTrue(runner.execute(call("first"), s) is Outcome.Success)
+        val second = runner.execute(call("second", revision = 1), s)
+        assertEquals(CreativeError.Code.LIMIT, (second as Outcome.Failure).error.code)
+        assertEquals(1L, s.document.value.revision)
+        // An operation already in the journal still replays.
+        assertTrue(runner.execute(call("first"), s) is Outcome.Success)
+    }
 }

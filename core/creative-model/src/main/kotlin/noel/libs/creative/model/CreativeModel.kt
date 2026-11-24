@@ -220,6 +220,8 @@ data class CreativeDocument(
                         )
                     }
                 }
+                // Same bounds as the draft file format, so every valid document can be reopened.
+                if (l.content is Content.Drawing) require(l.content.strokes.size <= 10_000)
                 if (l.content is Content.Drawing)
                     l.content.strokes.forEach { stroke ->
                         require(
@@ -236,6 +238,7 @@ data class CreativeDocument(
                 if (l.content is Content.Text)
                     require(
                         l.content.text.length <= 100_000 &&
+                            l.content.styles.size <= 100_000 &&
                             l.content.format.size.isFinite() &&
                             l.content.format.size in 1f..4096f
                     )

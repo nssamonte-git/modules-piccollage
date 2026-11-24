@@ -70,7 +70,8 @@ fun CreativeCanvas(
                         do {
                             val event = awaitPointerEvent()
                             pan += event.calculatePan()
-                            scale *= event.calculateZoom()
+                            // Clamp so an extreme pinch can't push transformBy out of range.
+                            scale = CanvasGesture.clampScale(scale * event.calculateZoom())
                             rotation += event.calculateRotation()
                             gesture.transformBy(
                                 pan.x / size.width * page.width.toDouble(),

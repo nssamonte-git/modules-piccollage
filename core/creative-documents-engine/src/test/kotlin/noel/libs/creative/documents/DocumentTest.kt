@@ -30,6 +30,15 @@ class DocumentTest {
     }
 
     @Test
+    fun documentAtTheStrokeLimitSavesAndReopens() {
+        val drawing = Content.Drawing(List(10_000) { Stroke(listOf(Point(1.0, 1.0))) })
+        val big = d.copy(pages = listOf(d.pages[0].copy(layers = listOf(Layer("draw", content = drawing)))))
+        big.validate()
+        val c = DocumentCodec()
+        assertEquals(big, c.decode(c.encode(big)))
+    }
+
+    @Test
     fun futureVersionPreserved() {
         val c = DocumentCodec()
         val b = c.encode(d)

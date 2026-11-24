@@ -8,21 +8,21 @@ Group `noel.libs`, version **0.2.0** (`library.version` in `gradle.properties`).
 
 | Capability | Engine artifact suffix | Optional UI artifact suffix |
 |---|---|---|
-| Transactional undo/redo and gesture merging | `core-creative-history-engine` | `core-creative-history-compose` |
-| Versioned drafts, page duplication, account-scoped storage and operation journal | `core-creative-documents-engine` | `core-creative-documents-compose` |
-| Transforms, hit tests, layer ordering and drawing paths | `core-creative-canvas-engine` | `core-creative-canvas-compose` |
-| Typed, validated recipes and entitlement-aware application | `core-creative-templates-engine` | `core-creative-templates-compose` |
-| Global assignment, subject-aware crops and analysis cache | `core-creative-layout-engine` | `core-creative-layout-compose` |
-| OpenGL effects with CPU fallback and graph validation | `core-creative-effects-engine` | `core-creative-effects-compose` |
-| Source-space erase/restore masks and segmentation-mask adapter | `core-creative-masks-engine` | `core-creative-masks-compose` |
-| Grapheme-safe text and style editing | `core-creative-text-engine` | `core-creative-text-compose` |
-| PNG/JPEG, MP4 timelines, crossfades, overlays, audio, sharing and printing | `core-creative-export-engine` | `core-creative-export-compose` |
-| Allowlisted editor operations with durable logical identity | `core-creative-ai-tools-engine` | `core-creative-ai-tools-compose` |
-| Provider-neutral image jobs, reconciliation and reversible acceptance | `core-creative-ai-images-engine` | `core-creative-ai-images-compose` |
+| Transactional undo/redo and gesture merging | [`core-creative-history-engine`](core/creative-history-engine/README.md) | [`core-creative-history-compose`](core/creative-history-compose/README.md) |
+| Versioned drafts, page duplication, account-scoped storage and operation journal | [`core-creative-documents-engine`](core/creative-documents-engine/README.md) | [`core-creative-documents-compose`](core/creative-documents-compose/README.md) |
+| Transforms, hit tests, layer ordering and drawing paths | [`core-creative-canvas-engine`](core/creative-canvas-engine/README.md) | [`core-creative-canvas-compose`](core/creative-canvas-compose/README.md) |
+| Typed, validated recipes and entitlement-aware application | [`core-creative-templates-engine`](core/creative-templates-engine/README.md) | [`core-creative-templates-compose`](core/creative-templates-compose/README.md) |
+| Global assignment, subject-aware crops and analysis cache | [`core-creative-layout-engine`](core/creative-layout-engine/README.md) | [`core-creative-layout-compose`](core/creative-layout-compose/README.md) |
+| OpenGL effects with CPU fallback and graph validation | [`core-creative-effects-engine`](core/creative-effects-engine/README.md) | [`core-creative-effects-compose`](core/creative-effects-compose/README.md) |
+| Source-space erase/restore masks and segmentation-mask adapter | [`core-creative-masks-engine`](core/creative-masks-engine/README.md) | [`core-creative-masks-compose`](core/creative-masks-compose/README.md) |
+| Grapheme-safe text and style editing | [`core-creative-text-engine`](core/creative-text-engine/README.md) | [`core-creative-text-compose`](core/creative-text-compose/README.md) |
+| PNG/JPEG, MP4 timelines, crossfades, overlays, audio, sharing and printing | [`core-creative-export-engine`](core/creative-export-engine/README.md) | [`core-creative-export-compose`](core/creative-export-compose/README.md) |
+| Allowlisted editor operations with durable logical identity | [`core-creative-ai-tools-engine`](core/creative-ai-tools-engine/README.md) | [`core-creative-ai-tools-compose`](core/creative-ai-tools-compose/README.md) |
+| Provider-neutral image jobs, reconciliation and reversible acceptance | [`core-creative-ai-images-engine`](core/creative-ai-images-engine/README.md) | [`core-creative-ai-images-compose`](core/creative-ai-images-compose/README.md) |
 
-All suffixes use `noel.libs:<suffix>:0.2.0`. Shared artifacts are `core-creative-model`, `core-creative-renderer`, and `core-creative-compose-common`. Existing `core-logging` and the `noel.libs.build-validator` plugin remain available at the same library version.
+All suffixes use `noel.libs:<suffix>:0.2.0`. Shared artifacts are [`core-creative-model`](core/creative-model/README.md), [`core-creative-renderer`](core/creative-renderer/README.md), and [`core-creative-compose-common`](core/creative-compose-common/README.md). Existing [`core-logging`](core/logging/README.md) and the `noel.libs.build-validator` plugin remain available at the same library version.
 
-See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits.
+Each module folder has a README with what it is for, a quick start, the main types, what your app provides, and its limits. See [the creative library guide](docs/creative-libraries.md) for constructors, ownership, defaults, integration contracts, and sample usage. [Coverage](docs/creative-coverage.tsv) maps all 36 extracted topics. [Validation](docs/creative-validation.md) records executed checks and limits.
 
 ## Use it in an app
 
@@ -65,7 +65,7 @@ Apply the plugin in the app's **root** `build.gradle.kts`. Every module's `preBu
 ## Add a module
 
 1. Create the folder, for example `core/network/`. Register it in [settings.gradle.kts](settings.gradle.kts) with `module("core/network")`. It becomes project `:core-network`, published as `noel.libs:core-network`.
-2. Copy [templates/module/](templates/module/) into the folder. Set the `namespace` (`noel.libs.<name>`) and the package.
+2. Copy [templates/module/](templates/module/) into the folder. Set the `namespace` (`noel.libs.<name>`) and the package, and fill in every section of its `README.md`.
 3. Add any dependency versions to [gradle/libs.versions.toml](gradle/libs.versions.toml) (exact versions only).
 4. Add a row to the catalog above. Bump `library.version` when you change a published module.
 5. Check it: `./gradlew :core-network:testDebugUnitTest :sample:assembleDebug`. Use it from `sample` if it helps to see it working.

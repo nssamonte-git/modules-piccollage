@@ -23,6 +23,10 @@ interface OperationStore {
 
     fun get(key: String): OperationRecord?
 
+    /**
+     * Stores [record]. When the journal is full, a record with a new key must be refused with
+     * [IllegalArgumentException]; the runners report that as [CreativeError.Code.LIMIT].
+     */
     fun put(record: OperationRecord)
 }
 

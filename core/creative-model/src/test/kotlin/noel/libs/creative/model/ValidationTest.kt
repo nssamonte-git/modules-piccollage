@@ -28,4 +28,20 @@ class ValidationTest {
             fail()
         } catch (_: IllegalArgumentException) {}
     }
+
+    @Test
+    fun drawingStrokeAndTextStyleCountsMatchTheDraftFormat() {
+        fun doc(content: Content) =
+            CreativeDocument("d", pages = listOf(Page("p", 100, 100, layers = listOf(Layer("l", content = content)))))
+        val stroke = Stroke(listOf(Point(1.0, 1.0)))
+        doc(Content.Drawing(List(10_000) { stroke })).validate()
+        try {
+            doc(Content.Drawing(List(10_001) { stroke })).validate()
+            fail("Drawing with more strokes than a draft can store was accepted")
+        } catch (_: IllegalArgumentException) {}
+        try {
+            doc(Content.Text("A", styles = List(100_001) { TextStyle(0, 1) })).validate()
+            fail("Text with more styles than a draft can store was accepted")
+        } catch (_: IllegalArgumentException) {}
+    }
 }

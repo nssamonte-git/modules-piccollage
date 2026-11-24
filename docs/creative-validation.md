@@ -30,11 +30,12 @@ No fresh decompilation or third-party implementation/assets were imported. Backe
 | Check | Result |
 |---|---|
 | Required security + JVM + R8 release build | PASS |
-| JVM unit tests | 48 PASS, zero failures/errors |
+| JVM unit tests | 53 PASS, zero failures/errors (5 added with the pinch, draft-limit and full-journal fixes) |
 | Build-validator plugin regression tests | 4 PASS |
 | Security findings | 0 critical/high/medium; 2 existing low warnings; zero blocking findings |
 | API 26 instrumentation | 8 PASS |
 | API 37 instrumentation | 8 PASS |
+| Physical phone, API 29, after the fixes | 8 PASS |
 | 25-module graph/layer guard | PASS |
 | Independent engine and Compose composite consumers | PASS |
 | Independent engine and Compose Maven Local consumers | PASS |

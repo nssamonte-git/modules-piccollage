@@ -28,14 +28,24 @@ class CanvasGesture(
 
     private var canceled = false
 
+    companion object {
+        const val MIN_SCALE = 0.01
+        const val MAX_SCALE = 100.0
+
+        /** Keeps an accumulated pinch factor inside the range [transformBy] accepts (NaN -> 1). */
+        fun clampScale(scale: Double): Double =
+            if (scale.isNaN()) 1.0 else scale.coerceIn(MIN_SCALE, MAX_SCALE)
+    }
+
     fun moveBy(dx: Double, dy: Double) {
         require(dx.isFinite() && dy.isFinite())
         preview =
             original.transform.copy(x = original.transform.x + dx, y = original.transform.y + dy)
     }
 
+    /** [scale] is relative to the gesture start and must be in [MIN_SCALE]..[MAX_SCALE]; see [clampScale]. */
     fun transformBy(dx: Double, dy: Double, scale: Double, rotation: Double, pivot: Point? = null) {
-        require(scale in 0.01..100.0)
+        require(scale in MIN_SCALE..MAX_SCALE)
         preview =
             original.transform.copy(
                 x = original.transform.x + dx,

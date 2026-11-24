@@ -52,4 +52,25 @@ class ImagesTest {
         val h = LetteringEntry("op", "a", "Hello", "outline", "missing")
         assertEquals("Hello", h.fallbackText)
     }
+
+    @Test
+    fun fullJournalReturnsLimitFailureWithoutCallingTheProvider() = runTest {
+        var calls = 0
+        val provider =
+            object : ImageProvider {
+                override suspend fun generate(job: ImageJob): Outcome<GeneratedImage> {
+                    calls++
+                    return Outcome.Success(GeneratedImage("out-${job.operationId}", "image/png", 100, 50, byteArrayOf(1)))
+                }
+            }
+        val validator =
+            object : GeneratedMediaValidator {
+                override fun validate(image: GeneratedImage) = Outcome.Success(image)
+            }
+        val runner = ImageJobRunner(MemoryOperationStore(maxEntries = 1), provider, validator)
+        assertTrue(runner.start(request) is Outcome.Success)
+        val second = runner.start(request.copy(operationId = "op2"))
+        assertEquals(CreativeError.Code.LIMIT, (second as Outcome.Failure).error.code)
+        assertEquals(1, calls)
+    }
 }

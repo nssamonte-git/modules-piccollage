@@ -483,9 +483,13 @@ private fun DemoScreen(activity: Activity) {
                 ToolProposalPanel(
                     proposal,
                     {
-                        proposal?.let {
-                            status = describe(toolRunner.execute(it, session))
+                        proposal?.let { call ->
+                            val target = session
                             proposal = null
+                            // The runner writes its file journal synchronously: keep it off the main thread.
+                            scope.launch {
+                                status = describe(withContext(Dispatchers.IO) { toolRunner.execute(call, target) })
+                            }
                         }
                     },
                     { proposal = null },
@@ -534,7 +538,7 @@ private fun DemoScreen(activity: Activity) {
                                 aiBusy = true
                                 generated = false
                                 try {
-                                    val result = imageRunner.start(job)
+                                    val result = withContext(Dispatchers.IO) { imageRunner.start(job) }
                                     status = describe(result)
                                     generated = result is Outcome.Success
                                     history.add(
@@ -553,17 +557,23 @@ private fun DemoScreen(activity: Activity) {
                         }
                     },
                     {
-                        imageJob?.let {
-                            imageRunner.cancel(it)
-                            status = "Canceled"
+                        imageJob?.let { job ->
+                            scope.launch {
+                                withContext(Dispatchers.IO) { imageRunner.cancel(job) }
+                                status = "Canceled"
+                            }
                         }
                         generated = false
                     },
                     {
                         imageJob?.let { job ->
-                            imageLayer?.let {
-                                status = describe(imageRunner.accept(job, session, page.id, it.id))
+                            imageLayer?.let { layer ->
+                                val target = session
+                                val pageId = page.id
                                 generated = false
+                                scope.launch {
+                                    status = describe(withContext(Dispatchers.IO) { imageRunner.accept(job, target, pageId, layer.id) })
+                                }
                             }
                         }
                     },

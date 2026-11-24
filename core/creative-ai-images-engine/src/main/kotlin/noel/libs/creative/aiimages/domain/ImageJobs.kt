@@ -137,7 +137,14 @@ class ImageJobRunner(
                     return@atomic Outcome.Success(it.copy(bytes = it.bytes.copyOf()))
                 }
                 reconcile = true
-            } else store.put(OperationRecord(k, fingerprint, OperationState.RUNNING))
+            } else {
+                // Recording a new operation is the only write that can hit the journal's capacity.
+                try {
+                    store.put(OperationRecord(k, fingerprint, OperationState.RUNNING))
+                } catch (_: IllegalArgumentException) {
+                    return@atomic failure(CreativeError.Code.LIMIT, "Operation journal full")
+                }
+            }
             null
         }
         if (early != null) return early

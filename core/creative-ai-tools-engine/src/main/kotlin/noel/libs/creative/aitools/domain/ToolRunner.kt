@@ -112,7 +112,12 @@ class ToolRunner(
             }
         if (call.revision != session.document.value.revision)
             return@atomic failure(CreativeError.Code.STALE_REVISION, "Request a fresh proposal")
-        store.put(OperationRecord(key, fp, OperationState.RUNNING))
+        // Recording a new operation is the only write that can hit the journal's capacity.
+        try {
+            store.put(OperationRecord(key, fp, OperationState.RUNNING))
+        } catch (_: IllegalArgumentException) {
+            return@atomic failure(CreativeError.Code.LIMIT, "Operation journal full")
+        }
         when (val result = session.commit(EditRequest(call.revision, listOf(edit)))) {
             is Outcome.Success -> {
                 store.put(

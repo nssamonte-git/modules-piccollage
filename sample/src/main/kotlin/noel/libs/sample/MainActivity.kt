@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
@@ -44,6 +45,7 @@ import noel.libs.creative.text.presentation.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent { MaterialTheme { Surface { DemoScreen(this@MainActivity) } } }
     }
@@ -69,7 +71,7 @@ private fun DemoScreen(activity: Activity) {
     }
     val env = environment
     if (env == null) {
-        Box(Modifier.fillMaxSize().padding(24.dp)) {
+        Box(Modifier.fillMaxSize().safeDrawingPadding().padding(24.dp)) {
             Text(if (loadError.isEmpty()) "Loading creative playground…" else loadError)
         }
         return
@@ -152,9 +154,11 @@ private fun DemoScreen(activity: Activity) {
         }
     }
     Column(
+        // targetSdk 35+ draws edge-to-edge: inset by the system bars and keyboard, not a fixed offset.
         Modifier.fillMaxSize()
+            .safeDrawingPadding()
             .verticalScroll(rememberScrollState())
-            .padding(top = 32.dp, bottom = 24.dp)
+            .padding(top = 16.dp, bottom = 24.dp)
     ) {
         Text(
             "Creative playground",

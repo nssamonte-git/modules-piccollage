@@ -1,0 +1,19 @@
+# Rule ids the flutter/bad fixture must fire (the native android/ and ios/ subtrees are scanned too).
+AND-BK-002
+AND-OV-001
+FL-LOG-001
+FL-ST-001
+FL-TLS-001
+FL-TLS-002
+FL-WV-001
+FL-WV-002
+FL-WV-003
+FL-WV-004
+SH-CR-001
+SH-CR-003
+SH-CR-004
+SH-CR-005
+SH-SEC-001
+SH-SEC-002
+SH-SEC-003
+SH-TLS-004

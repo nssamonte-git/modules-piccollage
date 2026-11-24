@@ -1,0 +1,6 @@
+name: good_flutter
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_secure_storage: ^9.0.0
+  freerasp: ^6.0.0

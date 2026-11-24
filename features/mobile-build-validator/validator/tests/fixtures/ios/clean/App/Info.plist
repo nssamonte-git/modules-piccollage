@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.example.good</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Scan the QR code on your card to link it.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Show branches near you.</string>
+</dict>
+</plist>

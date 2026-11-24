@@ -1,0 +1,9 @@
+{
+  "//": "Merge these into the scripts block of package.json. npm/yarn run the pre* scripts before `npm run android` / `npm run ios`; the Gradle and Xcode hooks cover every other way of building. EAS runs eas-build-post-install on its build servers.",
+  "scripts": {
+    "validate:security": "sh build-validator/validate-build.sh",
+    "preandroid": "sh build-validator/validate-build.sh",
+    "preios": "sh build-validator/validate-build.sh",
+    "eas-build-post-install": "sh build-validator/validate-build.sh"
+  }
+}

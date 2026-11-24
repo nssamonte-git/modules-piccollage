@@ -1,0 +1,4 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- debug-only overrides: must NOT be reported (src/debug is excluded for these rules) -->
+    <application android:usesCleartextTraffic="true" android:debuggable="true" />
+</manifest>

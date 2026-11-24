@@ -1,0 +1,25 @@
+# Rule ids the react-native/bad fixture must fire (the native android/ and ios/ subtrees are scanned too).
+AND-OV-001
+AND-RE-003
+RN-DL-001
+RN-EXPO-001
+RN-EXPO-002
+RN-LOG-001
+RN-SEC-001
+RN-ST-001
+RN-TLS-001
+RN-WV-001
+RN-WV-002
+RN-WV-003
+RN-WV-004
+RN-WV-005
+SH-CR-001
+SH-CR-002
+SH-CR-003
+SH-CR-004
+SH-SEC-001
+SH-SEC-002
+SH-SEC-003
+SH-SEC-004
+SH-TLS-004
+RN-HERM-001

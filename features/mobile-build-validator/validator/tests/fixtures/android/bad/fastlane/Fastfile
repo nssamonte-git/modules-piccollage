@@ -1,0 +1,5 @@
+platform :android do
+  lane :beta do
+    unlock_keychain(path: "ci", keychain_password: "hunter22pass")
+  end
+end

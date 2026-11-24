@@ -1,0 +1,366 @@
+id	title	severity	cwe	owasp	card
+android-exported-components	Improperly Exported Android Components	high	CWE-926	MASVS-PLATFORM,MASTG-TEST-0364,M8:2024	android/exported-components.md
+android-apk-tampering-repackaging	APK Tampering / Repackaging	high	CWE-354,CWE-494	MASVS-RESILIENCE,MASTG-TEST-0224,M7:2024	android/integrity/android-apk-tampering-repackaging.md
+android-dynamic-code-loading	Unsafe Dynamic Code Loading	high	CWE-494,CWE-829	MASVS-CODE,MASVS-RESILIENCE,A08:2025	android/integrity/android-dynamic-code-loading.md
+android-instrumentation-hooking	Instrumentation / Hooking	medium	CWE-602,CWE-489	MASVS-RESILIENCE,MASTG-TEST-0341,M7:2024	android/integrity/android-instrumentation-hooking.md
+android-integrity-bypass	Integrity / Play-Integrity Bypass	medium	CWE-602,CWE-654	MASVS-RESILIENCE,M7:2024	android/integrity/android-integrity-bypass.md
+android-reverse-engineering	APK Reverse Engineering	medium	CWE-656	MASVS-RESILIENCE,MASTG-TEST-0368,M7:2024	android/integrity/android-reverse-engineering.md
+android-rooted-device	Rooted-Device Compromise	medium	CWE-250	MASVS-RESILIENCE,MASTG-TEST-0325,M7:2024	android/integrity/android-rooted-device.md
+android-sideloaded-malware	Sideloaded Malware	medium	CWE-829	MASVS-RESILIENCE,MASVS-PLATFORM	android/integrity/android-sideloaded-malware.md
+android-sms-interception	SMS / OTP Interception	high	CWE-1390,CWE-319	MASVS-AUTH,MASVS-PLATFORM,M3:2024,A07:2025	android/integrity/android-sms-interception.md
+android-version-downgrade	App Version Downgrade	medium	CWE-757,CWE-1104	MASVS-CODE,MASTG-TEST-0392,A03:2025	android/integrity/android-version-downgrade.md
+android-contentprovider-vulnerabilities	ContentProvider Vulnerabilities	high	CWE-926,CWE-89,CWE-22	MASVS-PLATFORM,MASTG-TEST-0355,MASTG-TEST-0339,M4:2024	android/ipc/android-contentprovider-vulnerabilities.md
+android-fileprovider-misconfig	FileProvider Misconfiguration	medium	CWE-732,CWE-200	MASVS-PLATFORM,MASVS-STORAGE,MASTG-TEST-0357	android/ipc/android-fileprovider-misconfig.md
+android-intent-redirection	Intent Redirection	high	CWE-940,CWE-441	MASVS-PLATFORM	android/ipc/android-intent-redirection.md
+android-intent-spoofing	Intent Spoofing / Interception	high	CWE-925,CWE-927	MASVS-PLATFORM,MASTG-TEST-0374,MASTG-TEST-0372	android/ipc/android-intent-spoofing.md
+android-pendingintent-hijacking	PendingIntent Hijacking	high	CWE-927,CWE-200	MASVS-PLATFORM,MASTG-TEST-0381	android/ipc/android-pendingintent-hijacking.md
+android-task-hijacking	Task Hijacking (StrandHogg)	high	CWE-1021	MASVS-PLATFORM	android/ipc/android-task-hijacking.md
+android-unsafe-binder-aidl	Unsafe Binder / AIDL IPC	medium	CWE-862,CWE-749	MASVS-PLATFORM,MASTG-TEST-0365	android/ipc/android-unsafe-binder-aidl.md
+android-accessibility-abuse	Accessibility / Notification-Listener Abuse	high	CWE-250,CWE-200	MASVS-PLATFORM,MASVS-PRIVACY	android/permissions/android-accessibility-abuse.md
+android-custom-permission-misconfig	Custom Permission Misconfiguration	medium	CWE-732,CWE-280	MASVS-PLATFORM,MASVS-CODE	android/permissions/android-custom-permission-misconfig.md
+android-excessive-permissions	Excessive / Misused Android Permissions	medium	CWE-250,CWE-272	MASVS-PRIVACY,MASVS-PLATFORM,MASTG-TEST-0254,M6:2024	android/permissions/android-excessive-permissions.md
+android-input-capture	Malicious Keyboard / Input Capture	medium	CWE-200,CWE-524	MASVS-PLATFORM,MASVS-PRIVACY,MASTG-TEST-0258	android/permissions/android-input-capture.md
+android-overlay-tapjacking	Overlay / Tapjacking Attacks	high	CWE-1021	MASVS-PLATFORM,MASTG-TEST-0340	android/permissions/android-overlay-tapjacking.md
+android-permission-redelegation	Permission Re-Delegation	medium	CWE-441,CWE-862	MASVS-PLATFORM	android/permissions/android-permission-redelegation.md
+android-privileged-service-abuse	Privileged-Service Abuse (Device Admin / VPN / Media Projection)	high	CWE-250,CWE-269	MASVS-PLATFORM,MASVS-PRIVACY	android/permissions/android-privileged-service-abuse.md
+android-sensor-radio-abuse	Sensor / Radio Permission Abuse	medium	CWE-359,CWE-200	MASVS-PRIVACY,MASVS-PLATFORM,M6:2024	android/permissions/android-sensor-radio-abuse.md
+android-backup-exposure	Android Backup Exposure	medium	CWE-530,CWE-312	MASVS-STORAGE,MASTG-TEST-0262,MASTG-TEST-0216,M8:2024	android/storage/android-backup-exposure.md
+android-data-leakage-surfaces	Android Data-Leakage Surfaces	medium	CWE-200,CWE-359	MASVS-PLATFORM,MASVS-STORAGE,MASTG-TEST-0291,MASTG-TEST-0315	android/storage/android-data-leakage-surfaces.md
+android-hardcoded-secrets	Hard-Coded Secrets in APKs	high	CWE-798,CWE-321	MASVS-CRYPTO,MASVS-STORAGE,MASTG-TEST-0212,M1:2024	android/storage/android-hardcoded-secrets.md
+android-insecure-data-storage	Insecure Android Data Storage	high	CWE-312,CWE-922	MASVS-STORAGE,MASTG-TEST-0207,MASTG-TEST-0200,M9:2024	android/storage/android-insecure-data-storage.md
+android-keystore-misuse	Improper Android Keystore Use	high	CWE-922,CWE-522	MASVS-CRYPTO,MASVS-AUTH,MASTG-TEST-0328,M10:2024	android/storage/android-keystore-misuse.md
+android-deep-link-abuse	Deep-Link / App-Link Abuse	high	CWE-939,CWE-20	MASVS-PLATFORM,MASTG-TEST-0393,MASTG-TEST-0394,M4:2024	android/webview/android-deep-link-abuse.md
+android-webview-file-access	WebView File-Access Abuse	high	CWE-200,CWE-22	MASVS-PLATFORM,MASVS-STORAGE,MASTG-TEST-0252,MASTG-TEST-0253	android/webview/android-webview-file-access.md
+android-webview-javascript-interface	Unsafe WebView JavaScript Interface	high	CWE-749,CWE-79	MASVS-PLATFORM,MASTG-TEST-0334	android/webview/android-webview-javascript-interface.md
+android-webview-tls-bypass	WebView TLS / Mixed-Content Bypass	high	CWE-295,CWE-319	MASVS-NETWORK,MASTG-TEST-0284,M5:2024	android/webview/android-webview-tls-bypass.md
+android-webview-untrusted-content	WebView Loading Untrusted Content	high	CWE-79,CWE-601	MASVS-PLATFORM,MASVS-CODE,MASTG-TEST-0398,MASTG-TEST-0399	android/webview/android-webview-untrusted-content.md
+jwt-kid-handling	Unsafe JWT kid Handling	high	CWE-347,CWE-22,CWE-89,CWE-90	API2:2023,A07:2025	backend/api-auth/jwt-kid-handling.md
+missing-api-authentication	Missing API Authentication	critical	CWE-306	API2:2023,A07:2025	backend/api-auth/missing-api-authentication.md
+oauth-scope-escalation	OAuth Scope Escalation	high	CWE-269,CWE-285	API5:2023,A01:2025	backend/api-auth/oauth-scope-escalation.md
+weak-api-keys	Weak API Key Handling	high	CWE-522,CWE-798,CWE-598,CWE-331	API2:2023	backend/api-auth/weak-api-keys.md
+hidden-admin-parameter	Hidden Administrative Parameter Abuse	high	CWE-472,CWE-285,CWE-915	API5:2023,API3:2023	backend/api-authz/hidden-admin-parameter.md
+insecure-pagination	Insecure Pagination Exposing Data	medium	CWE-639,CWE-200,CWE-770	API1:2023,API4:2023	backend/api-authz/insecure-pagination.md
+api-versioning-security-drift	Inconsistent Security Across API Versions	high	CWE-693	API9:2023	backend/api-inventory/api-versioning-security-drift.md
+exposed-api-docs	Exposed API Documentation / Schema	low	CWE-200	API9:2023,API8:2023,A02:2025	backend/api-inventory/exposed-api-docs.md
+unsafe-api-consumption	Unsafe Consumption of Third-Party APIs	high	CWE-20,CWE-200,CWE-319,CWE-400	API10:2023	backend/api-inventory/unsafe-api-consumption.md
+cloud-account-takeover	Cloud-Account Takeover	critical	CWE-287,CWE-308,CWE-269	A07:2025,A01:2025	backend/cloud/cloud-account-takeover.md
+cloud-audit-logging-gaps	Cloud Audit Logging Gaps	medium	CWE-778,CWE-223	A09:2025	backend/cloud/cloud-audit-logging-gaps.md
+container-image-compromise	Container Image Compromise	high	CWE-494,CWE-1395	A08:2025,A03:2025	backend/cloud/container-image-compromise.md
+insecure-iac	Insecure Infrastructure-as-Code	medium	CWE-1188,CWE-1357	A02:2025,A08:2025	backend/cloud/insecure-iac.md
+k8s-rbac-misconfig	Kubernetes RBAC Misconfiguration	high	CWE-269,CWE-732	A01:2025,A02:2025	backend/cloud/k8s-rbac-misconfig.md
+k8s-secret-exposure	Kubernetes Secret Exposure	high	CWE-522,CWE-312	A02:2025	backend/cloud/k8s-secret-exposure.md
+secrets-in-env-vars	Secrets in Environment Variables / Manifests	medium	CWE-526,CWE-540	A02:2025	backend/cloud/secrets-in-env-vars.md
+serverless-event-injection	Serverless Event Injection	high	CWE-20,CWE-94	A05:2025,A06:2025	backend/cloud/serverless-event-injection.md
+application-cache-security	Application Cache Leakage / Poisoning	medium	CWE-524,CWE-306,CWE-345	A01:2025,A02:2025	backend/database/application-cache-security.md
+data-corruption	Data Corruption / Replication Interception	medium	CWE-345,CWE-319	A08:2025,A06:2025,A04:2025	backend/database/data-corruption.md
+db-credential-theft	Database Credential Theft	high	CWE-522,CWE-798	A02:2025,A07:2025	backend/database/db-credential-theft.md
+excessive-db-privileges	Excessive Database Privileges	medium	CWE-250,CWE-269	A01:2025,A02:2025	backend/database/excessive-db-privileges.md
+insecure-stored-procedures	Insecure Stored Procedures	medium	CWE-89,CWE-250	A05:2025	backend/database/insecure-stored-procedures.md
+search-index-leakage	Search-Index Data Leakage	medium	CWE-200,CWE-668	A01:2025,A02:2025	backend/database/search-index-leakage.md
+weak-row-level-security	Weak Row-Level Security	high	CWE-285,CWE-639	A01:2025,API1:2023	backend/database/weak-row-level-security.md
+arbitrary-file-write	Arbitrary File Write	high	CWE-73,CWE-22,CWE-434,CWE-59	A01:2025,A05:2025	backend/exploitation/arbitrary-file-write.md
+file-inclusion	Local / Remote File Inclusion	high	CWE-98,CWE-22	A05:2025,A01:2025	backend/exploitation/file-inclusion.md
+remote-code-execution	Remote Code Execution	critical	CWE-94	A05:2025,A03:2025	backend/exploitation/remote-code-execution.md
+zero-day-exploitation	Zero-Day Exploitation	high	CWE-1395	A03:2025	backend/exploitation/zero-day-exploitation.md
+graphql-batching-abuse	GraphQL Batching / Alias Amplification	medium	CWE-770,CWE-799,CWE-307	API4:2023	backend/graphql/graphql-batching-abuse.md
+graphql-field-suggestion-leakage	GraphQL Field-Suggestion Information Leakage	low	CWE-209,CWE-200	API8:2023,API9:2023	backend/graphql/graphql-field-suggestion-leakage.md
+graphql-introspection-exposure	GraphQL Introspection Exposure	medium	CWE-200	API8:2023,API9:2023,A02:2025	backend/graphql/graphql-introspection-exposure.md
+graphql-resolver-authorization	GraphQL Resolver Authorization Failure	high	CWE-285,CWE-639	API1:2023,API3:2023,API5:2023	backend/graphql/graphql-resolver-authorization.md
+backend-mass-assignment	Mass Assignment / Over-Posting	high	CWE-915	API3:2023,A08:2025	backend/mass-assignment.md
+event-spoofing	Event Spoofing	high	CWE-345,CWE-290	A08:2025,A06:2025	backend/messaging/event-spoofing.md
+message-queue-security	Message-Queue Poisoning and Replay	high	CWE-20,CWE-345,CWE-294	A06:2025,A08:2025	backend/messaging/message-queue-security.md
+unauthorized-message-publishing	Unauthorized Message Publishing / Consumer Impersonation	high	CWE-306,CWE-862	A01:2025,A06:2025	backend/messaging/unauthorized-message-publishing.md
+webhook-security	Webhook Spoofing, Replay, and SSRF	high	CWE-345,CWE-918,CWE-294	API10:2023,API7:2023,A08:2025,A01:2025	backend/messaging/webhook-security.md
+attacker-persistence	Persistence Mechanisms	high	CWE-506	A09:2025	backend/post-exploitation/attacker-persistence.md
+c2-traffic	Command-and-Control Traffic	medium	CWE-923	A09:2025	backend/post-exploitation/c2-traffic.md
+cryptomining	Cryptomining Malware	medium	CWE-400	A09:2025	backend/post-exploitation/cryptomining.md
+data-exfiltration	Data Exfiltration	high	CWE-200	A09:2025,A01:2025	backend/post-exploitation/data-exfiltration.md
+lateral-movement	Lateral Movement	high	CWE-923,CWE-269	A01:2025,A09:2025	backend/post-exploitation/lateral-movement.md
+ios-background-task-leakage	Background-Task Data Leakage	low	CWE-200,CWE-532	MASVS-STORAGE,MASVS-PRIVACY,MASTG-TEST-0290	ios/auth/ios-background-task-leakage.md
+ios-excessive-permissions	Excessive iOS Permissions / Overcollection	medium	CWE-359,CWE-250	MASVS-PRIVACY,MASTG-TEST-0360,M6:2024	ios/auth/ios-excessive-permissions.md
+ios-localauthentication-misuse	Incorrect LocalAuthentication Use	high	CWE-287,CWE-303	MASVS-AUTH,MASTG-TEST-0266,MASTG-TEST-0268,M3:2024	ios/auth/ios-localauthentication-misuse.md
+ios-malicious-keyboard	Malicious Keyboards / Extensions	medium	CWE-200	MASVS-PLATFORM,MASVS-PRIVACY,MASTG-TEST-0389	ios/auth/ios-malicious-keyboard.md
+ios-push-apns-security	Push / APNs Security Weaknesses	medium	CWE-345,CWE-200	MASVS-PLATFORM,A08:2025	ios/auth/ios-push-apns-security.md
+ios-app-attest-bypass	App Attest / DeviceCheck Bypass or Overreliance	medium	CWE-602,CWE-654	MASVS-RESILIENCE,M7:2024	ios/integrity/ios-app-attest-bypass.md
+ios-app-tampering-repackaging	App Tampering / Re-Signing / Repackaging	high	CWE-353,CWE-494	MASVS-RESILIENCE,M7:2024	ios/integrity/ios-app-tampering-repackaging.md
+ios-enterprise-cert-abuse	Enterprise-Certificate / Provisioning Abuse	high	CWE-522,CWE-732	MASVS-RESILIENCE,A08:2025,M2:2024	ios/integrity/ios-enterprise-cert-abuse.md
+ios-entitlement-misconfig	Entitlement Misconfiguration	medium	CWE-732,CWE-250	MASVS-RESILIENCE,MASVS-PLATFORM,MASTG-TEST-0261,M8:2024	ios/integrity/ios-entitlement-misconfig.md
+ios-jailbroken-device	Jailbroken-Device Compromise	medium	CWE-602	MASVS-RESILIENCE,MASTG-TEST-0240,MASTG-TEST-0241	ios/integrity/ios-jailbroken-device.md
+ios-reverse-engineering	IPA Reverse Engineering	medium	CWE-656	MASVS-RESILIENCE,MASTG-TEST-0391,M7:2024	ios/integrity/ios-reverse-engineering.md
+ios-runtime-hooking	Runtime Hooking / Instrumentation	medium	CWE-602,CWE-489	MASVS-RESILIENCE,MASTG-TEST-0354,M7:2024	ios/integrity/ios-runtime-hooking.md
+ios-keychain-accessibility	Weak iOS Keychain Accessibility Class	medium	CWE-922	MASVS-STORAGE,M9:2024	ios/keychain-accessibility.md
+ios-backup-icloud-exposure	Backup / iCloud Exposure	medium	CWE-530,CWE-312	MASVS-STORAGE,MASTG-TEST-0215,M9:2024	ios/storage/ios-backup-icloud-exposure.md
+ios-data-leakage-surfaces	iOS Data-Leakage Surfaces	medium	CWE-200,CWE-359	MASVS-STORAGE,MASVS-PLATFORM,MASTG-TEST-0277,MASTG-TEST-0290	ios/storage/ios-data-leakage-surfaces.md
+ios-hardcoded-secrets	Hard-Coded Secrets in IPA Binaries	high	CWE-798,CWE-321	MASVS-CRYPTO,MASVS-STORAGE,MASTG-TEST-0213,M1:2024	ios/storage/ios-hardcoded-secrets.md
+ios-insecure-data-storage	Insecure iOS Data Storage	high	CWE-312,CWE-922	MASVS-STORAGE,MASTG-TEST-0302,M9:2024	ios/storage/ios-insecure-data-storage.md
+ios-keychain-sharing	Keychain Sharing / Sync Mistakes	medium	CWE-200,CWE-732	MASVS-STORAGE,M9:2024	ios/storage/ios-keychain-sharing.md
+ios-secure-enclave-misuse	Weak Secure Enclave / Key Usage	medium	CWE-522,CWE-922	MASVS-CRYPTO,MASVS-AUTH,M10:2024	ios/storage/ios-secure-enclave-misuse.md
+ios-weak-data-protection	Weak Data Protection Classes	medium	CWE-311,CWE-312	MASVS-STORAGE,MASTG-TEST-0299,M9:2024	ios/storage/ios-weak-data-protection.md
+ios-app-extension-abuse	App Extension Abuse	medium	CWE-20,CWE-200	MASVS-PLATFORM,M4:2024	ios/webview/ios-app-extension-abuse.md
+ios-app-group-leakage	App Group / IPC Leakage	medium	CWE-200,CWE-732	MASVS-PLATFORM,MASVS-STORAGE,MASTG-TEST-0388	ios/webview/ios-app-group-leakage.md
+ios-deep-link-abuse	Deep-Link / Universal-Link Abuse	high	CWE-939,CWE-20	MASVS-PLATFORM,MASTG-TEST-0370,MASTG-TEST-0395,M4:2024	ios/webview/ios-deep-link-abuse.md
+ios-wkwebview-file-access	Unsafe WKWebView File URL Handling	medium	CWE-200,CWE-552	MASVS-PLATFORM,MASVS-STORAGE,MASTG-TEST-0333	ios/webview/ios-wkwebview-file-access.md
+ios-wkwebview-message-handlers	Unsafe WKWebView Message Handlers	high	CWE-749,CWE-79	MASVS-PLATFORM,MASTG-TEST-0376	ios/webview/ios-wkwebview-message-handlers.md
+ios-wkwebview-untrusted-content	Unsafe WKWebView Content	high	CWE-79,CWE-601	MASVS-PLATFORM,MASVS-NETWORK,MASTG-TEST-0332	ios/webview/ios-wkwebview-untrusted-content.md
+agent-cascading-failures	Agent Cascading Failures	high	CWE-400,CWE-770	ASI08:2026,LLM06:2025,LLM01:2025,LLM04:2025	shared/ai-llm/agent-cascading-failures.md
+agent-identity-privilege-abuse	Agent Identity and Privilege Abuse	high	CWE-269,CWE-441,CWE-367	ASI03:2026,LLM06:2025,LLM01:2025,LLM02:2025	shared/ai-llm/agent-identity-privilege-abuse.md
+agent-memory-context-poisoning	Agent Memory and Context Poisoning	high	CWE-1427,CWE-345	ASI06:2026,LLM04:2025,LLM08:2025,LLM01:2025	shared/ai-llm/agent-memory-context-poisoning.md
+agent-unexpected-code-execution	Agent Unexpected Code Execution (RCE)	critical	CWE-94,CWE-95,CWE-78	ASI05:2026,LLM05:2025,LLM01:2025	shared/ai-llm/agent-unexpected-code-execution.md
+agentic-supply-chain	Agentic Supply Chain (Malicious MCP Servers, Tools, and Agent Registries)	high	CWE-829,CWE-1357,CWE-494	ASI04:2026,LLM03:2025,LLM01:2025	shared/ai-llm/agentic-supply-chain.md
+human-agent-trust-exploitation	Human-Agent Trust Exploitation	high	CWE-451,CWE-357	ASI09:2026,LLM09:2025,LLM06:2025,LLM05:2025	shared/ai-llm/human-agent-trust-exploitation.md
+insecure-inter-agent-communication	Insecure Inter-Agent Communication	high	CWE-345,CWE-306,CWE-294,CWE-319	ASI07:2026,LLM01:2025	shared/ai-llm/insecure-inter-agent-communication.md
+llm-data-poisoning	Training / Retrieval Data Poisoning	high	CWE-1427,CWE-20,CWE-345	LLM04:2025	shared/ai-llm/llm-data-poisoning.md
+llm-excessive-agency	Excessive Agency / Tool-Call Abuse	high	CWE-250,CWE-862	LLM06:2025,ASI02:2026	shared/ai-llm/llm-excessive-agency.md
+llm-hallucinated-decisions	Hallucinated / Overrelied Security Decisions	high	CWE-1426,CWE-807	LLM09:2025	shared/ai-llm/llm-hallucinated-decisions.md
+llm-insecure-output-handling	Insecure Model Output Handling	high	CWE-1426,CWE-79,CWE-94	LLM05:2025	shared/ai-llm/llm-insecure-output-handling.md
+llm-model-dos	Model Denial of Service / Unbounded Consumption	medium	CWE-400,CWE-770	LLM10:2025,API4:2023	shared/ai-llm/llm-model-dos.md
+llm-model-extraction	Model Extraction / Theft	medium	CWE-200,CWE-799	LLM10:2025	shared/ai-llm/llm-model-extraction.md
+llm-prompt-injection	Prompt Injection (Direct and Indirect)	high	CWE-1427,CWE-77	LLM01:2025,ASI01:2026	shared/ai-llm/llm-prompt-injection.md
+llm-sensitive-data-disclosure	LLM Sensitive-Data Disclosure	high	CWE-200,CWE-359	LLM02:2025,LLM07:2025	shared/ai-llm/llm-sensitive-data-disclosure.md
+llm-supply-chain	Malicious Model / Dataset Supply Chain	high	CWE-1395,CWE-506,CWE-502	LLM03:2025	shared/ai-llm/llm-supply-chain.md
+llm-vector-db-leakage	Vector / Embedding Weaknesses	high	CWE-200,CWE-639	LLM08:2025	shared/ai-llm/llm-vector-db-leakage.md
+rogue-agents	Rogue Agents	high	CWE-250,CWE-778	ASI10:2026,LLM06:2025,LLM02:2025,LLM09:2025	shared/ai-llm/rogue-agents.md
+account-enumeration	Account Enumeration	medium	CWE-204,CWE-203,CWE-208	WSTG-IDNT-04,A07:2025	shared/auth/account-enumeration.md
+account-recovery-takeover	Account-Recovery Takeover	high	CWE-640	A07:2025,WSTG-ATHN-08	shared/auth/account-recovery-takeover.md
+api-key-theft	API-Key Theft or Leakage	high	CWE-522,CWE-798	A07:2025,API2:2023	shared/auth/api-key-theft.md
+authentication-downgrade	Authentication Downgrade	medium	CWE-288,CWE-1390,CWE-757	WSTG-ATHN-10,A07:2025	shared/auth/authentication-downgrade.md
+biometric-fallback-abuse	Biometric Fallback Abuse	medium	CWE-288,CWE-602,CWE-287	MASVS-AUTH,A07:2025	shared/auth/biometric-fallback-abuse.md
+brute-force	Brute-Force Attack	high	CWE-307	WSTG-ATHN-03,A07:2025	shared/auth/brute-force.md
+concurrent-session-abuse	Concurrent-Session and Dormant-Account Abuse	medium	CWE-1462,CWE-1464	WSTG-SESS-11,A07:2025	shared/auth/concurrent-session-abuse.md
+cookie-token-theft	Cookie or Token Theft	high	CWE-522,CWE-1004,CWE-614,CWE-539,CWE-315	WSTG-SESS-02,A07:2025,A04:2025	shared/auth/cookie-token-theft.md
+credential-stuffing	Credential Stuffing	high	CWE-307,CWE-308	A07:2025	shared/auth/credential-stuffing.md
+default-passwords	Default Passwords	high	CWE-1392,CWE-1393,CWE-798	WSTG-ATHN-02,A07:2025,A02:2025	shared/auth/default-passwords.md
+email-phone-change-abuse	Email-Change or Phone-Change Abuse	high	CWE-620,CWE-640	A07:2025	shared/auth/email-phone-change-abuse.md
+jwt-algorithm-confusion	JWT Algorithm Confusion	high	CWE-347,CWE-757	WSTG-SESS-10,A07:2025,A04:2025	shared/auth/jwt-algorithm-confusion.md
+jwt-signature-validation	JWT Signature-Validation Errors	high	CWE-347	WSTG-SESS-10,A07:2025,A04:2025	shared/auth/jwt-signature-validation.md
+long-lived-tokens	Long-Lived Tokens	medium	CWE-1463	WSTG-SESS-07,A07:2025	shared/auth/long-lived-tokens.md
+mfa-bypass	MFA Bypass	high	CWE-288,CWE-287,CWE-305	WSTG-ATHN-11,A07:2025	shared/auth/mfa-bypass.md
+mfa-fatigue	MFA Fatigue / Push Bombing	high	CWE-799,CWE-287	A07:2025	shared/auth/mfa-fatigue.md
+missing-state-nonce-pkce	Missing OAuth State, Nonce, or PKCE	high	CWE-352,CWE-287	WSTG-ATHZ-05,A07:2025,A01:2025	shared/auth/missing-state-nonce-pkce.md
+missing-token-revocation	Missing Token Revocation	high	CWE-1464,CWE-1465,CWE-1466	WSTG-SESS-06,A07:2025	shared/auth/missing-token-revocation.md
+oauth-device-code-phishing	OAuth Device Code Phishing	high	CWE-451,CWE-346	A07:2025	shared/auth/oauth-device-code-phishing.md
+oauth-oidc-misconfiguration	OAuth / OIDC Misconfiguration	high	CWE-1390,CWE-287,CWE-601	WSTG-ATHZ-05,A07:2025,A02:2025	shared/auth/oauth-oidc-misconfiguration.md
+otp-brute-force	OTP Brute Forcing	high	CWE-307,CWE-330	WSTG-ATHN-11,A07:2025	shared/auth/otp-brute-force.md
+otp-interception	OTP Interception	high	CWE-287,CWE-319	A07:2025	shared/auth/otp-interception.md
+password-reset-abuse	Password-Reset Abuse	high	CWE-640	WSTG-ATHN-09,A07:2025	shared/auth/password-reset-abuse.md
+password-spraying	Password Spraying	high	CWE-307,CWE-521	A07:2025,WSTG-ATHN-03	shared/auth/password-spraying.md
+phishing-social-engineering	Phishing and Social Engineering	high	CWE-1390,CWE-451	A07:2025	shared/auth/phishing-social-engineering.md
+refresh-token-replay	Refresh-Token Replay	high	CWE-294,CWE-1464	A07:2025	shared/auth/refresh-token-replay.md
+service-account-compromise	Service-Account Compromise	high	CWE-522,CWE-269	A07:2025,A01:2025	shared/auth/service-account-compromise.md
+session-fixation	Session Fixation	high	CWE-384	WSTG-SESS-03,A07:2025	shared/auth/session-fixation.md
+session-hijacking	Session Hijacking	high	CWE-1462,CWE-287	WSTG-SESS-09,A07:2025	shared/auth/session-hijacking.md
+sim-swapping	SIM Swapping	high	CWE-1390,CWE-287	A07:2025	shared/auth/sim-swapping.md
+weak-reused-passwords	Weak or Reused Passwords	medium	CWE-521,CWE-1391	WSTG-ATHN-07,A07:2025	shared/auth/weak-reused-passwords.md
+administrative-endpoint-exposure	Administrative Endpoint Exposure	high	CWE-749,CWE-306	A01:2025,A02:2025,WSTG-CONF-05	shared/authz/administrative-endpoint-exposure.md
+authorization-cache-errors	Authorization Cache Errors	medium	CWE-285,CWE-524	A01:2025	shared/authz/authorization-cache-errors.md
+broken-access-control	Broken Access Control	high	CWE-284,CWE-862,CWE-863	A01:2025,WSTG-ATHZ	shared/authz/broken-access-control.md
+broken-function-level-authorization	Broken Function-Level Authorization	high	CWE-285	API5:2023,A01:2025,WSTG-APIT-04	shared/authz/broken-function-level-authorization.md
+broken-property-level-authorization	Broken Object Property-Level Authorization	high	CWE-915,CWE-213	API3:2023,A01:2025,WSTG-APIT-03	shared/authz/broken-property-level-authorization.md
+confused-deputy	Confused-Deputy Attack	medium	CWE-441	A01:2025,API1:2023	shared/authz/confused-deputy.md
+idor-bola	Insecure Direct Object Reference / Broken Object Level Authorization	high	CWE-639	API1:2023,A01:2025,WSTG-ATHZ-04,WSTG-APIT-02	shared/authz/idor-bola.md
+missing-server-side-authorization	Missing Server-Side Authorization	high	CWE-862,CWE-602	A01:2025,WSTG-ATHZ-02	shared/authz/missing-server-side-authorization.md
+privilege-escalation	Privilege Escalation (Horizontal and Vertical)	high	CWE-269	A01:2025,API5:2023,WSTG-ATHZ-03	shared/authz/privilege-escalation.md
+tenant-isolation-failure	Tenant-Isolation Failure	high	CWE-639,CWE-668	A01:2025,API1:2023	shared/authz/tenant-isolation-failure.md
+amplification-ddos	Amplification / Reflection DDoS	high	CWE-406	A06:2025	shared/availability/amplification-ddos.md
+auth-endpoint-flood	Login / OTP Flooding	medium	CWE-799,CWE-400	API4:2023,A06:2025	shared/availability/auth-endpoint-flood.md
+cache-stampede	Cache Stampede	medium	CWE-400	A06:2025	shared/availability/cache-stampede.md
+connection-pool-exhaustion	Connection / Thread / Queue Pool Exhaustion	high	CWE-410,CWE-400,CWE-770	API4:2023,A10:2025,A06:2025	shared/availability/connection-pool-exhaustion.md
+cost-exhaustion	Cost Exhaustion (Denial of Wallet)	high	CWE-770,CWE-400	API4:2023	shared/availability/cost-exhaustion.md
+dependency-outage	Dependency or Cloud-Provider Outage	medium	CWE-1088,CWE-754,CWE-400	A10:2025,A06:2025	shared/availability/dependency-outage.md
+destructive-admin-actions	Destructive Administrative Actions	high	CWE-269,CWE-250	A06:2025,A01:2025	shared/availability/destructive-admin-actions.md
+expensive-operations	Expensive Operations / Large Uploads	medium	CWE-405,CWE-400,CWE-770	API4:2023,A06:2025	shared/availability/expensive-operations.md
+graphql-complexity	GraphQL Complexity Attacks	medium	CWE-770,CWE-400	API4:2023	shared/availability/graphql-complexity.md
+http-request-flood	HTTP / API Request Flood	high	CWE-400,CWE-770	API4:2023,A06:2025	shared/availability/http-request-flood.md
+ransomware	Ransomware	critical	CWE-506	A06:2025	shared/availability/ransomware.md
+resource-exhaustion	Compute / Memory / Disk Exhaustion	high	CWE-400,CWE-770	API4:2023,A06:2025	shared/availability/resource-exhaustion.md
+retry-storm	Retry Storms / Cascading Failure	medium	CWE-400	A10:2025,A06:2025	shared/availability/retry-storm.md
+slow-request-attack	Slow-Request Attacks	medium	CWE-400,CWE-770	A06:2025	shared/availability/slow-request-attack.md
+volumetric-ddos	Volumetric (Network/Transport) DDoS	high	CWE-400	A06:2025	shared/availability/volumetric-ddos.md
+card-credential-testing	Credential or Payment-Card Testing	high	CWE-799,CWE-307	API6:2023,API4:2023	shared/business-logic/card-credential-testing.md
+fake-account-creation	Fake-Account Creation	medium	CWE-799	API6:2023,WSTG-IDNT-02	shared/business-logic/fake-account-creation.md
+feature-flag-manipulation	Feature-Flag Manipulation	medium	CWE-602	A01:2025,A06:2025,A02:2025	shared/business-logic/feature-flag-manipulation.md
+fraud-legitimate-requests	Fraud Through Legitimate-Looking Requests	high		WSTG-BUSL-07,API6:2023	shared/business-logic/fraud-legitimate-requests.md
+geo-restriction-bypass	Geographical-Restriction Bypass	medium	CWE-807,CWE-602	A01:2025,A06:2025,WSTG-BUSL-02	shared/business-logic/geo-restriction-bypass.md
+inventory-reservation-abuse	Inventory / Reservation Hoarding	medium	CWE-799	API6:2023,WSTG-BUSL-04	shared/business-logic/inventory-reservation-abuse.md
+payment-abuse	Payment-Status Manipulation and Refund Abuse	high	CWE-345	WSTG-BUSL-10,A06:2025	shared/business-logic/payment-abuse.md
+price-quantity-manipulation	Price or Quantity Manipulation	high	CWE-472,CWE-1284,CWE-20	WSTG-BUSL-10,WSTG-BUSL-01,A06:2025	shared/business-logic/price-quantity-manipulation.md
+promotion-abuse	Coupon, Loyalty, and Referral Abuse	medium	CWE-837,CWE-799	WSTG-BUSL-05,API6:2023,A06:2025	shared/business-logic/promotion-abuse.md
+race-condition	Race Conditions / TOCTOU	high	CWE-362,CWE-367	WSTG-BUSL-10,A06:2025	shared/business-logic/race-condition.md
+review-voting-manipulation	Review or Voting Manipulation	medium	CWE-837,CWE-799	API6:2023,WSTG-BUSL-05	shared/business-logic/review-voting-manipulation.md
+scalping-automation	Automated Purchasing / Scalping	medium	CWE-799	API6:2023,WSTG-BUSL-05	shared/business-logic/scalping-automation.md
+scraping	Scraping / Data Harvesting	medium	CWE-799,CWE-200	API4:2023,API6:2023	shared/business-logic/scraping.md
+spam-content-flooding	Spam and Content Flooding	medium	CWE-799,CWE-400	API6:2023,API4:2023	shared/business-logic/spam-content-flooding.md
+trial-subscription-abuse	Trial or Subscription Abuse	medium	CWE-837,CWE-799	WSTG-BUSL-05,API6:2023	shared/business-logic/trial-subscription-abuse.md
+workflow-bypass	Workflow / State Bypass	high	CWE-841	WSTG-BUSL-06,A06:2025	shared/business-logic/workflow-bypass.md
+browser-security-misconfiguration	CORS and Security-Header Misconfiguration	medium	CWE-942,CWE-1021,CWE-693	A02:2025	shared/config-infra/browser-security-misconfiguration.md
+container-privilege-escape	Unsafe Container Privileges / Escape	high	CWE-250,CWE-269	A02:2025	shared/config-infra/container-privilege-escape.md
+debug-mode-in-production	Debug Mode / Dev Tools in Production	high	CWE-489,CWE-215	A02:2025	shared/config-infra/debug-mode-in-production.md
+default-credentials	Default Credentials (Infrastructure)	high	CWE-1392,CWE-798	A02:2025,A07:2025	shared/config-infra/default-credentials.md
+dns-misconfig-subdomain-takeover	Insecure DNS Config / Subdomain Takeover	high	CWE-672	WSTG-CONF-10,A02:2025	shared/config-infra/dns-misconfig-subdomain-takeover.md
+exposed-admin-consoles	Exposed Admin Consoles and Dashboards	high	CWE-306,CWE-749,CWE-284	A02:2025,A01:2025	shared/config-infra/exposed-admin-consoles.md
+exposed-env-files	Exposed Environment / Config Files	high	CWE-538,CWE-527,CWE-530,CWE-552	A02:2025,A01:2025	shared/config-infra/exposed-env-files.md
+fail-open-security-controls	Fail-Open Security Controls	high	CWE-636,CWE-755	A10:2025,A01:2025	shared/config-infra/fail-open-security-controls.md
+improper-exception-handling	Improper Exception Handling and Inconsistent State	medium	CWE-755,CWE-390,CWE-460,CWE-772	A10:2025	shared/config-infra/improper-exception-handling.md
+insecure-defaults	Insecure Defaults / Prod-Test Mixing	medium	CWE-1188,CWE-276	A02:2025	shared/config-infra/insecure-defaults.md
+metadata-service-exposure	Cloud Metadata-Service Exposure	high	CWE-918,CWE-441	A02:2025,A01:2025	shared/config-infra/metadata-service-exposure.md
+missing-network-segmentation	Missing Network Segmentation	medium	CWE-653,CWE-923	A02:2025,A01:2025	shared/config-infra/missing-network-segmentation.md
+open-ports-firewall	Unnecessary Open Ports / Over-Permissive Firewall	high	CWE-1327,CWE-284	A02:2025	shared/config-infra/open-ports-firewall.md
+orphaned-cloud-resources	Orphaned Cloud Resources / Shadow Infrastructure	medium	CWE-710	A02:2025	shared/config-infra/orphaned-cloud-resources.md
+over-permissive-iam	Over-Permissive Cloud IAM	high	CWE-732,CWE-269,CWE-250	A02:2025,A01:2025	shared/config-infra/over-permissive-iam.md
+public-data-store	Publicly Exposed Databases and Buckets	critical	CWE-732,CWE-668,CWE-306	A02:2025,A01:2025	shared/config-infra/public-data-store.md
+serverless-permission-abuse	Serverless Permission Abuse	medium	CWE-269,CWE-732	A02:2025,A01:2025	shared/config-infra/serverless-permission-abuse.md
+verbose-errors	Verbose Errors / Directory Listing	medium	CWE-209,CWE-548	A02:2025,A10:2025,WSTG-ERRH-01	shared/config-infra/verbose-errors.md
+cryptographic-downgrade	Cryptographic Downgrade Attack	medium	CWE-757	A04:2025,WSTG-CRYP-01	shared/crypto/cryptographic-downgrade.md
+hardcoded-encryption-keys	Hard-Coded Encryption Keys	high	CWE-321,CWE-798	A04:2025,MASVS-CRYPTO	shared/crypto/hardcoded-encryption-keys.md
+improper-encryption-mode	Improper Encryption Mode	high	CWE-327,CWE-353	A04:2025,MASVS-CRYPTO,WSTG-CRYP-04	shared/crypto/improper-encryption-mode.md
+improper-key-derivation	Improper Key Derivation	medium	CWE-916,CWE-326	A04:2025,MASVS-CRYPTO	shared/crypto/improper-key-derivation.md
+improper-key-management	Improper Key Management	high	CWE-522,CWE-324	A04:2025,MASVS-CRYPTO	shared/crypto/improper-key-management.md
+improper-secrets-management	Improper Secrets Management	high	CWE-522,CWE-798	A04:2025,A02:2025	shared/crypto/improper-secrets-management.md
+incorrect-certificate-validation	Incorrect Certificate Validation	high	CWE-295,CWE-297	A07:2025,A04:2025,MASVS-NETWORK	shared/crypto/incorrect-certificate-validation.md
+iv-nonce-reuse	IV / Nonce Reuse	high	CWE-323,CWE-329	A04:2025,MASVS-CRYPTO	shared/crypto/iv-nonce-reuse.md
+padding-oracle	Padding-Oracle Attack	high	CWE-209,CWE-696	WSTG-CRYP-02,A04:2025	shared/crypto/padding-oracle.md
+signature-verification-failure	Signature-Verification Failure	high	CWE-347	A04:2025,A08:2025	shared/crypto/signature-verification-failure.md
+timing-side-channel	Timing and Side-Channel Attacks	medium	CWE-208,CWE-203	A04:2025	shared/crypto/timing-side-channel.md
+weak-obsolete-algorithms	Weak or Obsolete Cryptographic Algorithms	high	CWE-327,CWE-328	A04:2025,MASVS-CRYPTO,WSTG-CRYP-04	shared/crypto/weak-obsolete-algorithms.md
+weak-password-hashing	Weak or Unsalted Password Hashing	high	CWE-916,CWE-759,CWE-327	A04:2025	shared/crypto/weak-password-hashing.md
+weak-random-number-generation	Weak Random-Number Generation / Predictable Tokens	high	CWE-338,CWE-330	A04:2025,MASVS-CRYPTO	shared/crypto/weak-random-number-generation.md
+backup-snapshot-leakage	Backup or Database Snapshot Leakage	high	CWE-530,CWE-200,CWE-312	A02:2025,A04:2025	shared/data-privacy/backup-snapshot-leakage.md
+data-export-abuse	Data Export Abuse	medium	CWE-200,CWE-639	A01:2025,API1:2023,API4:2023	shared/data-privacy/data-export-abuse.md
+data-retention-violation	Data-Retention Violation / Missing Secure Deletion	medium	CWE-212,CWE-459	A06:2025	shared/data-privacy/data-retention-violation.md
+excessive-data-collection	Excessive Data Collection / Missing Consent	medium	CWE-359	A06:2025,MASVS-PRIVACY	shared/data-privacy/excessive-data-collection.md
+metadata-leakage	Metadata Leakage	low	CWE-200,CWE-1230,CWE-497	A01:2025,A02:2025,WSTG-INFO-05	shared/data-privacy/metadata-leakage.md
+re-identification	Re-Identification of Anonymized Data	medium	CWE-359	A06:2025	shared/data-privacy/re-identification.md
+secrets-leakage	Credential, Token, or Key Leakage	high	CWE-200,CWE-522,CWE-321	A04:2025,A02:2025	shared/data-privacy/secrets-leakage.md
+sensitive-data-exposure	Sensitive Information Disclosure	high	CWE-200	A01:2025,A06:2025,API3:2023	shared/data-privacy/sensitive-data-exposure.md
+sensitive-data-in-client-storage	Sensitive Data in Client Storage and Surfaces	medium	CWE-922,CWE-312,CWE-359	MASVS-STORAGE,MASVS-PLATFORM	shared/data-privacy/sensitive-data-in-client-storage.md
+sensitive-data-in-logs	Sensitive Data in Logs, Analytics, and Crash Reports	medium	CWE-532,CWE-200	A09:2025,MASVS-STORAGE	shared/data-privacy/sensitive-data-in-logs.md
+tracking-fingerprinting	Location Tracking and Device Fingerprinting	medium	CWE-359	A06:2025,MASVS-PRIVACY	shared/data-privacy/tracking-fingerprinting.md
+unauthorized-data-sharing	Unauthorized Data Sharing / Third-Party Tracking	medium	CWE-359	A06:2025,MASVS-PRIVACY	shared/data-privacy/unauthorized-data-sharing.md
+unencrypted-data-at-rest	Unencrypted Data at Rest	high	CWE-311,CWE-312	A04:2025,MASVS-STORAGE	shared/data-privacy/unencrypted-data-at-rest.md
+unencrypted-data-in-transit	Unencrypted Data in Transit	high	CWE-319	A04:2025,MASVS-NETWORK,WSTG-CRYP-03	shared/data-privacy/unencrypted-data-in-transit.md
+alert-fatigue	Alert Fatigue / Excessive False Positives	low	CWE-778	A09:2025	shared/detection-ops/alert-fatigue.md
+compromised-backups	Compromised Backups	high	CWE-312,CWE-284	A09:2025,A02:2025	shared/detection-ops/compromised-backups.md
+delayed-incident-response	Delayed or Missing Incident Response	medium		A09:2025	shared/detection-ops/delayed-incident-response.md
+incomplete-asset-inventory	Incomplete Asset Inventory / Shadow Systems	medium		API9:2023,A09:2025	shared/detection-ops/incomplete-asset-inventory.md
+insider-threats	Insider Threats / Privileged-User Abuse	high	CWE-269,CWE-284	A01:2025,A09:2025	shared/detection-ops/insider-threats.md
+log-tampering	Log Tampering or Deletion	medium	CWE-732,CWE-117,CWE-778	A09:2025	shared/detection-ops/log-tampering.md
+missing-alerting	Missing Alerting	medium	CWE-778	A09:2025	shared/detection-ops/missing-alerting.md
+missing-backup-testing	Missing Backup Testing	medium		A09:2025	shared/detection-ops/missing-backup-testing.md
+missing-monitoring	Missing Monitoring / Detection	medium	CWE-778,CWE-223	A09:2025	shared/detection-ops/missing-monitoring.md
+missing-security-logging	Missing or Insufficient Security Logging	medium	CWE-778,CWE-223	A09:2025	shared/detection-ops/missing-security-logging.md
+social-engineering-staff	Social Engineering of Staff	high	CWE-640,CWE-308	A07:2025	shared/detection-ops/social-engineering-staff.md
+stolen-privileged-devices	Stolen Developer or Administrator Devices	high	CWE-522,CWE-308	A07:2025,A09:2025	shared/detection-ops/stolen-privileged-devices.md
+unpatched-vulnerabilities	Unpatched Vulnerabilities / Unsupported Systems	high	CWE-1104,CWE-1329,CWE-1395	A03:2025	shared/detection-ops/unpatched-vulnerabilities.md
+buffer-overflow	Buffer Overflow	high	CWE-120,CWE-787,CWE-121,CWE-122	A05:2025,MASVS-CODE	shared/injection/buffer-overflow.md
+code-injection	Code Injection	critical	CWE-94,CWE-95	A05:2025,WSTG-INPV-11	shared/injection/code-injection.md
+crlf-injection	CRLF Injection / HTTP Response Splitting	medium	CWE-113,CWE-93	A05:2025,WSTG-INPV-15	shared/injection/crlf-injection.md
+csv-formula-injection	CSV / Spreadsheet Formula Injection	medium	CWE-1236	A05:2025	shared/injection/csv-formula-injection.md
+email-header-injection	Email-Header Injection	medium	CWE-93	A05:2025,WSTG-INPV-10	shared/injection/email-header-injection.md
+expression-language-injection	Expression-Language Injection	high	CWE-917	A05:2025	shared/injection/expression-language-injection.md
+format-string	Format-String Attack	medium	CWE-134	A05:2025,WSTG-INPV-13,MASVS-CODE	shared/injection/format-string.md
+integer-overflow	Integer Overflow / Underflow	medium	CWE-190,CWE-191	A05:2025,MASVS-CODE	shared/injection/integer-overflow.md
+ldap-injection	LDAP Injection	medium	CWE-90	A05:2025,WSTG-INPV-06	shared/injection/ldap-injection.md
+log-injection	Log Injection	medium	CWE-117	A09:2025,A05:2025	shared/injection/log-injection.md
+malicious-document-image-parsing	Malicious Document / Image Parsing	medium	CWE-20,CWE-1284	A03:2025,A02:2025	shared/injection/malicious-document-image-parsing.md
+malicious-file-upload	Malicious File Upload	high	CWE-434	A06:2025,A02:2025,WSTG-BUSL-09	shared/injection/malicious-file-upload.md
+memory-corruption	Memory Corruption (OOB Access, Use-After-Free, Type Confusion)	high	CWE-787,CWE-416,CWE-125,CWE-415,CWE-476,CWE-843	A05:2025,MASVS-CODE	shared/injection/memory-corruption.md
+nosql-injection	NoSQL Injection	high	CWE-943	A05:2025,WSTG-INPV-05	shared/injection/nosql-injection.md
+null-byte-injection	Null-Byte Injection	medium	CWE-158,CWE-626	A05:2025	shared/injection/null-byte-injection.md
+os-command-injection	OS Command Injection	critical	CWE-78,CWE-77,CWE-88	A05:2025,WSTG-INPV-12	shared/injection/os-command-injection.md
+path-traversal	Path Traversal	high	CWE-22	A01:2025,A02:2025,WSTG-ATHZ-01	shared/injection/path-traversal.md
+prototype-pollution	Prototype Pollution	high	CWE-1321	A05:2025,A08:2025	shared/injection/prototype-pollution.md
+redos	Regular-Expression Denial of Service (ReDoS)	medium	CWE-1333,CWE-400	A06:2025	shared/injection/redos.md
+server-side-template-injection	Server-Side Template Injection	high	CWE-1336,CWE-94	A05:2025,WSTG-INPV-18	shared/injection/server-side-template-injection.md
+sql-injection	SQL Injection	high	CWE-89	A05:2025,WSTG-INPV-05	shared/injection/sql-injection.md
+ssrf	Server-Side Request Forgery	high	CWE-918	A01:2025,API7:2023,WSTG-INPV-19	shared/injection/ssrf.md
+unsafe-deserialization	Unsafe Deserialization	critical	CWE-502	A08:2025,WSTG-INJT-23	shared/injection/unsafe-deserialization.md
+xml-injection	XML Injection	medium	CWE-91	A05:2025,WSTG-INPV-07	shared/injection/xml-injection.md
+xpath-injection	XPath Injection	medium	CWE-643	A05:2025,WSTG-INPV-09	shared/injection/xpath-injection.md
+xxe	XML External Entity (XXE)	high	CWE-611,CWE-776	A02:2025,A05:2025,WSTG-INPV-07	shared/injection/xxe.md
+zip-bomb	Decompression Bomb (Zip Bomb)	medium	CWE-409,CWE-400	A06:2025	shared/injection/zip-bomb.md
+zip-slip	Zip Slip (Archive Path Traversal)	high	CWE-22	A01:2025	shared/injection/zip-slip.md
+iot-device-impersonation	Device Impersonation	high	CWE-290,CWE-345	MASVS-NETWORK,A07:2025	shared/iot-devices/iot-device-impersonation.md
+iot-device-input-injection	Command Injection Through Device Input	high	CWE-77,CWE-20	A05:2025	shared/iot-devices/iot-device-input-injection.md
+iot-firmware-compromise	Firmware Compromise	high	CWE-494,CWE-347,CWE-1277	A08:2025,IoT-I4:2018	shared/iot-devices/iot-firmware-compromise.md
+iot-malicious-peripheral	Malicious Peripheral	medium	CWE-20,CWE-940	MASVS-PLATFORM,MASVS-CODE	shared/iot-devices/iot-malicious-peripheral.md
+iot-physical-tampering	Physical Tampering	medium	CWE-1263,CWE-1191	A08:2025,IoT-I10:2018	shared/iot-devices/iot-physical-tampering.md
+iot-replay-relay	Replay and Relay Attacks	high	CWE-294	MASVS-NETWORK	shared/iot-devices/iot-replay-relay.md
+iot-unauthorized-pairing	Unauthorized / Weak Pairing	high	CWE-287,CWE-1391	MASVS-NETWORK,IoT-I1:2018	shared/iot-devices/iot-unauthorized-pairing.md
+iot-unencrypted-comms	Unencrypted Device Communication	high	CWE-319	MASVS-NETWORK,A04:2025,IoT-I7:2018	shared/iot-devices/iot-unencrypted-comms.md
+attacker-in-the-middle	Attacker-in-the-Middle	high	CWE-300,CWE-319	A04:2025,MASVS-NETWORK	shared/network/attacker-in-the-middle.md
+captive-portal-interference	Captive-Portal Interference	low	CWE-300	A04:2025,MASVS-NETWORK	shared/network/captive-portal-interference.md
+dns-attacks	DNS Spoofing, Poisoning, and Hijacking	high	CWE-350	A07:2025,A02:2025	shared/network/dns-attacks.md
+proximity-wireless-interception	Bluetooth and NFC Interception / Relay	medium	CWE-300,CWE-294	MASVS-NETWORK	shared/network/proximity-wireless-interception.md
+proxy-manipulation	Proxy Manipulation	medium	CWE-441,CWE-348	A01:2025,A04:2025	shared/network/proxy-manipulation.md
+push-notification-interception	Push-Notification Interception	medium	CWE-200,CWE-359	MASVS-STORAGE,MASVS-NETWORK,MASVS-PRIVACY	shared/network/push-notification-interception.md
+replay-attack	Replay Attack	high	CWE-294	A07:2025,A06:2025	shared/network/replay-attack.md
+request-tampering	Request Tampering	high	CWE-472,CWE-345,CWE-565	A08:2025,A06:2025,WSTG-BUSL-02	shared/network/request-tampering.md
+routing-attacks	Network-Routing and BGP Attacks	medium	CWE-290,CWE-300	A07:2025,A04:2025	shared/network/routing-attacks.md
+traffic-analysis	Traffic and Metadata Analysis	low	CWE-200	A04:2025,MASVS-PRIVACY	shared/network/traffic-analysis.md
+unauthenticated-service-to-service	Unauthenticated Service-to-Service Traffic	high	CWE-306,CWE-319	A07:2025,A04:2025,A01:2025	shared/network/unauthenticated-service-to-service.md
+websocket-interception	WebSocket Interception and Hijacking	medium	CWE-1385,CWE-346	WSTG-CLNT-10,A01:2025,A04:2025	shared/network/websocket-interception.md
+offline-data-exposure-stolen-device	Data Exposure from Stolen Devices	high	CWE-312,CWE-311	MASVS-STORAGE	shared/offline-sync/offline-data-exposure-stolen-device.md
+offline-device-time-manipulation	Manipulated Device Time	medium	CWE-602,CWE-807	A06:2025	shared/offline-sync/offline-device-time-manipulation.md
+offline-local-data-tampering	Local Database Tampering	high	CWE-602,CWE-345	MASVS-STORAGE,A08:2025	shared/offline-sync/offline-local-data-tampering.md
+offline-replay-reconnect	Replay After Reconnection / Duplicate Submission	high	CWE-294,CWE-837	A06:2025	shared/offline-sync/offline-replay-reconnect.md
+offline-stale-authorization	Stale Offline Authorization	high	CWE-1464,CWE-862	A01:2025,MASVS-AUTH	shared/offline-sync/offline-stale-authorization.md
+offline-sync-conflict	Synchronization Conflicts	medium	CWE-362,CWE-345	A06:2025	shared/offline-sync/offline-sync-conflict.md
+chargeback-fraud	Chargeback Fraud	medium		API6:2023	shared/payments/chargeback-fraud.md
+payment-provider-credential-compromise	Payment-Provider Credential Compromise	critical	CWE-522,CWE-798	A02:2025,API2:2023	shared/payments/payment-provider-credential-compromise.md
+artifact-tampering	Build Artifact Substitution / Tampering	high	CWE-494,CWE-353,CWE-345	CICD-SEC-9,A08:2025,A03:2025	shared/supply-chain/artifact-tampering.md
+ci-cd-pipeline-compromise	CI/CD Pipeline / Build-Runner Compromise	critical	CWE-284,CWE-829,CWE-494	A03:2025,CICD-SEC-5,CICD-SEC-6,CICD-SEC-4,A08:2025	shared/supply-chain/ci-cd-pipeline-compromise.md
+compromised-build-tools	Compromised Build Tools / IDE Plugins	high	CWE-506,CWE-1357,CWE-494	A03:2025,CICD-SEC-9,CICD-SEC-3,A08:2025	shared/supply-chain/compromised-build-tools.md
+compromised-developer-devices	Compromised Developer Devices	high	CWE-506,CWE-522	A03:2025,A08:2025	shared/supply-chain/compromised-developer-devices.md
+compromised-registry	Compromised Package Registry	high	CWE-494,CWE-829	A03:2025,A08:2025,CICD-SEC-3	shared/supply-chain/compromised-registry.md
+compromised-third-party-sdk	Compromised Third-Party SDK	high	CWE-506,CWE-1357,CWE-829	A03:2025,A08:2025	shared/supply-chain/compromised-third-party-sdk.md
+dependency-confusion	Dependency Confusion	high	CWE-427,CWE-829	CICD-SEC-3,A03:2025,A08:2025	shared/supply-chain/dependency-confusion.md
+insufficient-pipeline-access-control	Insufficient Pipeline-Based Access Controls (PBAC)	high	CWE-250,CWE-269	CICD-SEC-5,A08:2025,A03:2025	shared/supply-chain/insufficient-pipeline-access-control.md
+insufficient-pipeline-flow-control	Insufficient CI/CD Flow Control Mechanisms	high	CWE-654,CWE-284	CICD-SEC-1,A08:2025,A03:2025	shared/supply-chain/insufficient-pipeline-flow-control.md
+malicious-packages	Malicious Packages	high	CWE-506	A03:2025,CICD-SEC-3,A08:2025	shared/supply-chain/malicious-packages.md
+malicious-software-updates	Malicious Software Updates	critical	CWE-494,CWE-347	A08:2025,A03:2025	shared/supply-chain/malicious-software-updates.md
+missing-supply-chain-controls	Missing Pinning, Signatures, or SBOM	medium	CWE-1357,CWE-494,CWE-353	A03:2025,A08:2025,CICD-SEC-9	shared/supply-chain/missing-supply-chain-controls.md
+poisoned-development-data	Poisoned Development Data	medium	CWE-1357,CWE-20	A08:2025,LLM04:2025,A06:2025	shared/supply-chain/poisoned-development-data.md
+poisoned-pipeline-execution	Poisoned Pipeline Execution (PPE)	critical	CWE-829,CWE-94	CICD-SEC-4,A08:2025,A03:2025	shared/supply-chain/poisoned-pipeline-execution.md
+secrets-in-source-control	Secret Leakage in Source Control	high	CWE-540,CWE-798,CWE-538	CICD-SEC-6,A02:2025,A03:2025	shared/supply-chain/secrets-in-source-control.md
+signing-key-theft	Signing-Key or Certificate Theft	critical	CWE-321,CWE-522	A04:2025,A08:2025	shared/supply-chain/signing-key-theft.md
+source-control-compromise	Source-Control Compromise	high	CWE-284,CWE-494	CICD-SEC-2,CICD-SEC-1,A03:2025,A08:2025	shared/supply-chain/source-control-compromise.md
+typosquatting	Typosquatting Packages	medium	CWE-506	CICD-SEC-3,A03:2025,A08:2025	shared/supply-chain/typosquatting.md
+unreviewed-ai-code	Unreviewed Generated or AI-Written Code	medium	CWE-1357,CWE-710	A03:2025,LLM09:2025,A06:2025	shared/supply-chain/unreviewed-ai-code.md
+vulnerable-dependencies	Vulnerable or Abandoned Dependencies	high	CWE-1395,CWE-1104	A03:2025	shared/supply-chain/vulnerable-dependencies.md
+autofill-exposure	Autofill Exposure	low	CWE-200,CWE-359	A06:2025	web/browser/autofill-exposure.md
+clickjacking	Clickjacking / UI Redressing	medium	CWE-1021	A06:2025,A02:2025,WSTG-CLNT-09	web/browser/clickjacking.md
+clipboard-abuse	Clipboard Abuse	low	CWE-200,CWE-668	A06:2025	web/browser/clipboard-abuse.md
+cross-origin-isolation	Cross-Origin Isolation Failures	low	CWE-668	A02:2025	web/browser/cross-origin-isolation.md
+csp-bypass	Content Security Policy Bypass	medium	CWE-693	A02:2025,WSTG-CONF-12	web/browser/csp-bypass.md
+csrf	Cross-Site Request Forgery	high	CWE-352	A01:2025,WSTG-SESS-05	web/browser/csrf.md
+dom-clobbering	DOM Clobbering	medium	CWE-79	A05:2025,WSTG-CLNT-01	web/browser/dom-clobbering.md
+malicious-browser-extensions	Malicious Browser Extensions	medium	CWE-829	A08:2025	web/browser/malicious-browser-extensions.md
+mime-sniffing	MIME-Sniffing Attacks	medium	CWE-430,CWE-79	A02:2025,WSTG-CONF-14	web/browser/mime-sniffing.md
+missing-sri	Missing Subresource Integrity	medium	CWE-353,CWE-494	A08:2025,A02:2025	web/browser/missing-sri.md
+mixed-content	Mixed-Content Loading	low	CWE-319	A04:2025,WSTG-CRYP-03	web/browser/mixed-content.md
+mutation-xss	Mutation XSS (mXSS)	high	CWE-79	A05:2025,WSTG-CLNT-01	web/browser/mutation-xss.md
+open-redirect	Open Redirect	medium	CWE-601	A01:2025,WSTG-CLNT-04	web/browser/open-redirect.md
+tabnabbing	Tabnabbing / Reverse Tabnabbing	medium	CWE-1022	A06:2025,WSTG-CLNT-14	web/browser/tabnabbing.md
+third-party-script-compromise	Third-Party Script / Tag-Manager Compromise	high	CWE-829,CWE-494	A08:2025,A03:2025	web/browser/third-party-script-compromise.md
+unsafe-iframe	Unsafe Iframe Use / Sandbox Omission	medium	CWE-829,CWE-1021	A02:2025,WSTG-CLNT-09	web/browser/unsafe-iframe.md
+unsafe-postmessage	Unsafe postMessage Handling	medium	CWE-346,CWE-345	A08:2025,A05:2025,WSTG-CLNT-11	web/browser/unsafe-postmessage.md
+css-injection	CSS Injection	medium	CWE-79,CWE-1021	A05:2025,WSTG-CLNT-05	web/css-injection.md
+dom-xss	DOM-Based Cross-Site Scripting	high	CWE-79	A05:2025,WSTG-CLNT-01	web/dom-xss.md
+polyglot-files	Polyglot Files	medium	CWE-434,CWE-430	A06:2025,A05:2025,WSTG-BUSL-09	web/files/polyglot-files.md
+svg-script-execution	SVG Script Execution	high	CWE-79,CWE-611	A05:2025,WSTG-BUSL-09	web/files/svg-script-execution.md
+unrestricted-file-download	Unrestricted File Download / Distribution	medium	CWE-22,CWE-434	A01:2025,A02:2025	web/files/unrestricted-file-download.md
+html-injection	HTML Injection	medium	CWE-80	A05:2025,WSTG-CLNT-03	web/html-injection.md
+cookie-tossing	Cookie Tossing / Shadowing	medium	CWE-565,CWE-384	A02:2025,A07:2025	web/http/cookie-tossing.md
+host-header-injection	Host-Header Injection	medium	CWE-644	A02:2025,WSTG-INPV-17	web/http/host-header-injection.md
+http-request-smuggling	HTTP Request Smuggling / Desync	high	CWE-444	A06:2025,A02:2025,WSTG-INPV-15	web/http/http-request-smuggling.md
+same-origin-policy-bypass	Same-Origin-Policy Bypass	high	CWE-942,CWE-346	A02:2025,WSTG-CLNT-07	web/http/same-origin-policy-bypass.md
+web-cache-deception	Web-Cache Deception	medium	CWE-524	A02:2025,WSTG-CONF-13	web/http/web-cache-deception.md
+web-cache-poisoning	Web-Cache Poisoning	high	CWE-349,CWE-444	A02:2025,WSTG-INPV-17	web/http/web-cache-poisoning.md
+insecure-web-manifest	Insecure Web-App Manifest / Stale Cached Code	low	CWE-1104,CWE-1329	A02:2025,A03:2025	web/pwa/insecure-web-manifest.md
+malicious-service-worker	Malicious Service-Worker Registration	high	CWE-79,CWE-494	A05:2025,A02:2025	web/pwa/malicious-service-worker.md
+web-push-abuse	Web Push / Background-Sync Abuse	medium	CWE-770,CWE-359	A06:2025	web/pwa/web-push-abuse.md
+dns-rebinding	DNS Rebinding	medium	CWE-350,CWE-918	A01:2025	web/url/dns-rebinding.md
+http-parameter-pollution	HTTP Parameter Pollution	medium	CWE-235	A05:2025,WSTG-INPV-04	web/url/http-parameter-pollution.md
+idn-homograph	Internationalized-Domain Homograph Attack	medium	CWE-1007,CWE-451	A06:2025,A07:2025	web/url/idn-homograph.md
+url-parsing-inconsistencies	URL Parsing Inconsistencies	high	CWE-436,CWE-22	A05:2025,A01:2025	web/url/url-parsing-inconsistencies.md
+xss	Cross-Site Scripting (Reflected and Stored)	high	CWE-79	A05:2025,WSTG-INPV-01,WSTG-INPV-02	web/xss.md

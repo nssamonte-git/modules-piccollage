@@ -1,0 +1,7 @@
+{
+  "expo": {
+    "name": "bad-rn",
+    "android": { "usesCleartextTraffic": true, "allowBackup": true },
+    "ios": { "infoPlist": { "NSAppTransportSecurity": { "NSAllowsArbitraryLoads": true } } }
+  }
+}

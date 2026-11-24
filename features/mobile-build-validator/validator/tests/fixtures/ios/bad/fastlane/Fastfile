@@ -1,0 +1,3 @@
+lane :release do
+  create_keychain(name: "ci", password: "hunter22pass")
+end

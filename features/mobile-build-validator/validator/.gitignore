@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Fixture proving the scanner skips node_modules; the repo root ignores node_modules/.
+!tests/fixtures/react-native/bad/node_modules/

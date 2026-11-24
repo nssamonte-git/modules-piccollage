@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+build/
+.gradle/
+local.properties
+.idea/
+*.iml
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+
+# The validator's test fixtures include a build/ folder on purpose (it proves build output is skipped).
+!features/mobile-build-validator/validator/tests/fixtures/**/build/

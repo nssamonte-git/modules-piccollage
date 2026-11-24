@@ -1,0 +1,29 @@
+// Mobile build validator: Gradle hook.
+//
+// Apply it from the app module's build file, after the plugins block:
+//   build.gradle      apply from: "$rootDir/../build-validator/build-validator.gradle"
+//   build.gradle.kts  apply(from = "$rootDir/../build-validator/build-validator.gradle")
+//
+// Every variant then runs :app:validateThreats before preBuild, so assemble*,
+// bundle*, install* and Android Studio "Run" stop while the scan reports
+// blocking findings. The JSON report is written to
+// app/build/reports/build-validator/report.json.
+
+def bvScript = ["${rootDir}/build-validator", "${rootDir}/../build-validator"]
+        .collect { file("${it}/validate-build.sh") }
+        .find { it.exists() }
+if (bvScript == null) {
+    throw new GradleException("Mobile build validator: build-validator/validate-build.sh was not found next to this project. Re-run install.sh.")
+}
+def bvShell = System.getProperty("os.name").toLowerCase().contains("windows") ? "bash" : "sh"
+def bvReport = layout.buildDirectory.file("reports/build-validator/report.json").get().asFile.absolutePath
+
+def validateThreats = tasks.register("validateThreats", Exec) {
+    group = "verification"
+    description = "Scans the project source for known mobile threats and fails on blocking findings."
+    workingDir bvScript.parentFile
+    commandLine bvShell, bvScript.absolutePath, "--report", bvReport
+    outputs.upToDateWhen { false }
+}
+
+tasks.matching { it.name == "preBuild" }.configureEach { dependsOn(validateThreats) }

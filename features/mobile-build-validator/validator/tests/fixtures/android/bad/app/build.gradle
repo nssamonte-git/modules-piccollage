@@ -1,0 +1,39 @@
+plugins { id 'com.android.application' }
+
+def enableProguardInReleaseBuilds = false
+
+android {
+    namespace 'com.example.bad'
+    defaultConfig {
+        minSdkVersion 21
+        buildConfigField "String", "API_SECRET", "\"s3cr3tValue123\""
+        resValue "string", "maps_token", "tok_9f8e7d6c5b4a"
+    }
+    signingConfigs {
+        debug {
+            storeFile file('debug.keystore')
+            storePassword 'android'
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+        }
+        release {
+            storeFile file('release.jks')
+            storePassword "Rel3aseP4ss"
+            keyAlias 'upload'
+            v2SigningEnabled false
+        }
+    }
+    buildTypes {
+        release {
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+        staging {
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    implementation "androidx.security:security-crypto:1.1.0-alpha06"
+}

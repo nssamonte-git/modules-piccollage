@@ -1,0 +1,8 @@
+{
+  "name": "good-rn",
+  "dependencies": {
+    "react-native": "0.76.0",
+    "react-native-keychain": "9.2.0",
+    "jail-monkey": "2.8.0"
+  }
+}

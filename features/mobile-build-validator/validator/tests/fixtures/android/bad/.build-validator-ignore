@@ -1,0 +1,2 @@
+AND-ST-003	app/src/main/java/com/example/bad/legacy/*	legacy export path, removal tracked in SEC-142
+AND-DA-001	app/src/main/AndroidManifest.xml

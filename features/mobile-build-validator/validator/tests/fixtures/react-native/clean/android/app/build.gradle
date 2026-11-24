@@ -1,0 +1,13 @@
+apply plugin: "com.android.application"
+
+def enableProguardInReleaseBuilds = true
+
+android {
+    namespace "com.example.good"
+    defaultConfig { minSdkVersion 24 }
+    buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+        }
+    }
+}

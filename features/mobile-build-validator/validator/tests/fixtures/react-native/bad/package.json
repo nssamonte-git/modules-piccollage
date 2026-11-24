@@ -1,0 +1,9 @@
+{
+  "name": "bad-rn",
+  "dependencies": {
+    "react-native": "0.76.0",
+    "react-native-webview": "13.12.0",
+    "@react-native-async-storage/async-storage": "2.0.0",
+    "jail-monkey": "2.8.0"
+  }
+}
